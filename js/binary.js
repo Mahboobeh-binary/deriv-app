@@ -23912,7 +23912,7 @@ var TradingDatePicker = function TradingDatePicker(_ref) {
         has_today_btn = void 0,
         is_read_only = void 0;
     var has_intraday_unit = (0, _duration.hasIntradayDurationUnit)(duration_units_list);
-    var min_duration = has_intraday_unit ? (0, _Date.toMoment)(server_time) : (0, _Date.toMoment)(server_time).add(duration_min_max.daily.min, 'second');
+    var min_duration = has_intraday_unit ? (0, _Date.toMoment)(server_time).clone() : (0, _Date.toMoment)(server_time).clone().add(duration_min_max.daily.min, 'second');
     var moment_contract_start_date_time = (0, _Date.setTime)((0, _Date.toMoment)(min_duration), (0, _Date.isTimeValid)(start_time) ? start_time : server_time.format('HH:mm:ss'));
 
     var max_daily_duration = duration_min_max.daily ? duration_min_max.daily.max : 365 * 24 * 3600;
@@ -27488,7 +27488,8 @@ var createMarkerSpotEntry = exports.createMarkerSpotEntry = function createMarke
 };
 
 var createMarkerSpotExit = exports.createMarkerSpotExit = function createMarkerSpotExit(contract_info, tick, idx) {
-    if (!contract_info.exit_tick_time || (0, _logic.isUserSold)(contract_info)) return false;
+    if (!contract_info.exit_tick_time) return false;
+    var is_user_sold = (0, _logic.isUserSold)(contract_info);
 
     var spot_count = void 0,
         align_label = void 0;
@@ -27497,13 +27498,13 @@ var createMarkerSpotExit = exports.createMarkerSpotExit = function createMarkerS
         align_label = tick.align_label;
     }
 
-    return createMarkerConfig(_markers.MARKER_TYPES_CONFIG.SPOT_EXIT.type, +contract_info.exit_tick_time, +contract_info.exit_tick, {
+    return createMarkerConfig(!is_user_sold ? _markers.MARKER_TYPES_CONFIG.SPOT_EXIT.type : _markers.MARKER_TYPES_CONFIG.SPOT_SELL.type, +contract_info.exit_tick_time, +contract_info.exit_tick, !is_user_sold ? {
         spot_value: '' + contract_info.exit_tick,
         spot_epoch: '' + contract_info.exit_tick_time,
         status: '' + (+contract_info.profit > 0 ? 'won' : 'lost'),
         align_label: align_label,
         spot_count: spot_count
-    });
+    } : {});
 };
 
 var createMarkerSpotMiddle = exports.createMarkerSpotMiddle = function createMarkerSpotMiddle(contract_info, tick, idx) {
@@ -27786,7 +27787,7 @@ var createDigitInfo = function createDigitInfo(spot, spot_time) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.getEndTime = exports.isValidToSell = exports.isUserSold = exports.isStarted = exports.isSoldBeforeStart = exports.isEnded = exports.getLastTickFromTickStream = exports.getIndicativePrice = exports.getFinalPrice = exports.getEndSpotTime = exports.getEndSpot = exports.getDisplayStatus = exports.calculateGranularity = exports.getChartGranularity = exports.getChartType = undefined;
+exports.getEndTime = exports.isValidToSell = exports.isUserSold = exports.isStarted = exports.isSoldBeforeStart = exports.isEnded = exports.getLastTickFromTickStream = exports.getIndicativePrice = exports.getFinalPrice = exports.getDisplayStatus = exports.calculateGranularity = exports.getChartGranularity = exports.getChartType = undefined;
 
 var _moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
@@ -27826,14 +27827,6 @@ var getDisplayStatus = exports.getDisplayStatus = function getDisplayStatus(cont
         status = contract_info.profit >= 0 ? 'won' : 'lost';
     }
     return status;
-};
-
-var getEndSpot = exports.getEndSpot = function getEndSpot(contract_info) {
-    return isUserSold(contract_info) ? contract_info.sell_spot : contract_info.exit_tick;
-};
-
-var getEndSpotTime = exports.getEndSpotTime = function getEndSpotTime(contract_info) {
-    return isUserSold(contract_info) ? +contract_info.sell_spot_time : +contract_info.exit_tick_time;
 };
 
 var getFinalPrice = exports.getFinalPrice = function getFinalPrice(contract_info) {
@@ -27877,10 +27870,15 @@ var getEndTime = exports.getEndTime = function getEndTime(contract_info) {
         is_sold = contract_info.is_sold;
 
 
-    if (is_tick_contract) return exit_tick_time;
     if (!is_sold) return undefined;
 
-    return sell_time < date_expiry ? exit_tick_time : date_expiry;
+    if (isUserSold(contract_info)) {
+        return sell_time > date_expiry ? date_expiry : sell_time;
+    } else if (!is_tick_contract && sell_time > date_expiry) {
+        return date_expiry;
+    }
+
+    return exit_tick_time;
 };
 
 /***/ }),
@@ -28210,12 +28208,16 @@ var ContractStore = (_dec = _mobx.action.bound, _dec2 = _mobx.action.bound, _dec
     }, {
         key: 'end_spot',
         get: function get() {
-            return (0, _logic.getEndSpot)(this.contract_info);
+            return this.contract_info.exit_tick;
         }
     }, {
         key: 'end_spot_time',
         get: function get() {
-            return (0, _logic.getEndSpotTime)(this.contract_info);
+            var _contract_info = this.contract_info,
+                exit_tick_time = _contract_info.exit_tick_time,
+                sell_time = _contract_info.sell_time;
+
+            return (0, _logic.isUserSold)(this.contract_info) ? sell_time : exit_tick_time;
         }
     }, {
         key: 'final_price',
@@ -28654,8 +28656,8 @@ var PortfolioStore = (_dec = _mobx.action.bound, _dec2 = _mobx.action.bound, _de
             // check if position to be removed is out of range from the maximum amount rendered in drawer
             if (this.positions.length > 4) i += 1;
             this.positions.splice(i, 1);
-            // check if chart is in contract_mode before removing contract details from chart
-            if (is_contract_mode) {
+            // check if contract is in view in contract_mode before removing contract details from chart
+            if (is_contract_mode && this.root_store.modules.contract.contract_id === contract_id) {
                 this.root_store.modules.contract.onCloseContract();
                 this.root_store.modules.trade.requestProposal();
             }
@@ -28778,12 +28780,12 @@ var PortfolioStore = (_dec = _mobx.action.bound, _dec2 = _mobx.action.bound, _de
             var i = _this5.getPositionIndexById(contract_response.contract_id);
 
             _this5.positions[i].contract_info = contract_response;
-            _this5.positions[i].exit_spot = (0, _logic.getEndSpot)(contract_response) || contract_response.current_spot; // workaround if no exit_spot in proposal_open_contract, use latest spot
+            _this5.positions[i].exit_spot = contract_response.exit_tick || contract_response.current_spot; // workaround if no exit_tick in proposal_open_contract, use latest spot
             _this5.positions[i].duration = (0, _details.getDurationTime)(contract_response);
             _this5.positions[i].duration_unit = (0, _details.getDurationUnitText)((0, _details.getDurationPeriod)(contract_response));
             _this5.positions[i].is_valid_to_sell = (0, _logic.isValidToSell)(contract_response);
             _this5.positions[i].result = (0, _logic.getDisplayStatus)(contract_response);
-            _this5.positions[i].sell_time = (0, _logic.getEndSpotTime)(contract_response) || contract_response.current_spot_time; // same as exit_spot, use latest spot time if no exit_tick_time
+            _this5.positions[i].sell_time = (0, _logic.getEndTime)(contract_response) || contract_response.current_spot_time; // same as exit_spot, use latest spot time if no exit_tick_time
             _this5.positions[i].status = 'complete';
 
             // fix for missing barrier and entry_spot
@@ -28791,6 +28793,9 @@ var PortfolioStore = (_dec = _mobx.action.bound, _dec2 = _mobx.action.bound, _de
                 _this5.positions[i].contract_info.barrier = _this5.positions[i].barrier;
                 _this5.positions[i].contract_info.entry_spot = _this5.positions[i].entry_spot;
             }
+
+            // remove exit_spot for manually sold contracts
+            if ((0, _logic.isUserSold)(contract_response)) _this5.positions[i].exit_spot = '-';
 
             _this5.positions[i].is_loading = false;
         };
@@ -29265,6 +29270,11 @@ var MARKER_CONTENT_TYPES = {
         ContentComponent: _markerSpot2.default,
         xPositioner: MARKER_X_POSITIONER.EPOCH,
         yPositioner: MARKER_Y_POSITIONER.VALUE
+    },
+    SPOT_SELL: {
+        ContentComponent: _markerSpot2.default,
+        xPositioner: MARKER_X_POSITIONER.EPOCH,
+        yPositioner: MARKER_Y_POSITIONER.VALUE
     }
 };
 
@@ -29288,6 +29298,11 @@ var MARKER_TYPES_CONFIG = exports.MARKER_TYPES_CONFIG = {
         type: 'SPOT_ENTRY',
         marker_config: MARKER_CONTENT_TYPES.SPOT_ENTRY,
         content_config: { className: 'chart-spot__entry' }
+    },
+    SPOT_SELL: {
+        type: 'SPOT_SELL',
+        marker_config: MARKER_CONTENT_TYPES.SPOT_SELL,
+        content_config: { className: 'chart-spot__spot' }
     },
     SPOT_EXIT: {
         type: 'SPOT_EXIT',
