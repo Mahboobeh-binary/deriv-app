@@ -61,7 +61,7 @@ export default class ContractStore extends BaseStore {
 
         SmartChartStore.setContractStart(date_start);
         if (end_time) {
-            SmartChartStore.is_static_chart = !this.is_on_going_contract;
+            SmartChartStore.setChartStaticState(!this.is_on_going_contract);
 
             SmartChartStore.setContractEnd(end_time);
 

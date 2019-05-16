@@ -98,6 +98,10 @@ export default class SmartChartStore extends BaseStore {
         this.updateEpochScrollToValue(scroll_to_left_epoch);
     }
 
+    @action.bound setChartStaticState(is_static_chart) {
+        this.is_static_chart = is_static_chart;
+    }
+
     // --------- All Contracts ---------
     @action.bound
     setContractStart(start) {
