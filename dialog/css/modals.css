@@ -282,7 +282,7 @@ html {
   height: 100%;
   overflow: hidden; }
 
-.dialog {
+.dc-dialog {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -297,7 +297,7 @@ html {
   right: 0;
   bottom: 0; }
 
-.dialog__background {
+.dc-dialog__background {
   position: absolute;
   top: 0;
   left: 0;
@@ -305,33 +305,33 @@ html {
   bottom: 0;
   transition: opacity 0.15s linear; }
 
-.dialog__background--enter, .dialog__background--exit {
+.dc-dialog__background--enter, .dc-dialog__background--exit {
   opacity: 0; }
 
-.dialog__background--enter-done {
+.dc-dialog__background--enter-done {
   opacity: 1; }
 
-.theme--light .dialog__background {
+.theme--light .dc-dialog__background {
   background-color: rgba(255, 255, 255, 0.56); }
 
-.theme--dark .dialog__background {
+.theme--dark .dc-dialog__background {
   background-color: rgba(16, 19, 32, 0.56); }
 
-.dialog__wrapper {
+.dc-dialog__wrapper {
   position: absolute;
   left: calc(100vw - 70%);
   top: calc(100vh - 70%);
   transition: transform 0.15s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.15s linear; }
 
-.dialog__wrapper--enter, .dialog__wrapper--exit {
+.dc-dialog__wrapper--enter, .dc-dialog__wrapper--exit {
   transform: translate3d(0, 50px, 0);
   opacity: 0; }
 
-.dialog__wrapper--enter-done {
+.dc-dialog__wrapper--enter-done {
   transform: translate3d(0, 0, 0);
   opacity: 1; }
 
-.dialog__dialog {
+.dc-dialog__dialog {
   max-width: 560px;
   max-height: 320px;
   min-width: 480px;
@@ -345,13 +345,13 @@ html {
   align-items: flex-start;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16); }
 
-.theme--light .dialog__dialog {
+.theme--light .dc-dialog__dialog {
   background-color: #fff; }
 
-.theme--dark .dialog__dialog {
+.theme--dark .dc-dialog__dialog {
   background-color: #191c31; }
 
-.dialog__header {
+.dc-dialog__header {
   font-size: 1.6em;
   color: rgba(0, 0, 0, 0.8);
   font-weight: 700;
@@ -360,13 +360,13 @@ html {
   line-height: 1.75;
   margin-bottom: 10px; }
 
-.theme--light .dialog__header {
+.theme--light .dc-dialog__header {
   color: rgba(0, 0, 0, 0.8); }
 
-.theme--dark .dialog__header {
+.theme--dark .dc-dialog__header {
   color: #fff; }
 
-.dialog__content {
+.dc-dialog__content {
   font-size: 1.4em;
   color: rgba(0, 0, 0, 0.8);
   font-weight: 400;
@@ -376,23 +376,23 @@ html {
   margin-bottom: 22.85714px;
   max-width: 448px; }
 
-.theme--light .dialog__content {
+.theme--light .dc-dialog__content {
   color: rgba(0, 0, 0, 0.8); }
 
-.theme--dark .dialog__content {
+.theme--dark .dc-dialog__content {
   color: #fff; }
 
-.dialog__footer {
+.dc-dialog__footer {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   width: 100%; }
 
-.dialog__button {
+.dc-dialog__button {
   margin: 0.4em; }
 
 @media screen and (max-width: 560px) {
-  .dialog__dialog {
+  .dc-dialog__dialog {
     width: 100vw;
     height: 100vh; } }
 
