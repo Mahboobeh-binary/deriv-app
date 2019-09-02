@@ -299,8 +299,6 @@
 .dc-autocomplete__trailing-icon--opened {
   transform: rotate(180deg); }
 
-/*# sourceMappingURL=autocomplete.css.map*/
-
 /*------------------------------------*
  *  # Constants
  *------------------------------------*/
@@ -562,8 +560,6 @@
   font-size: 1.2rem;
   font-size: var(--text-size-xs); }
 
-/*# sourceMappingURL=input.css.map*/
-
 /*------------------------------------*
  *  # Constants
  *------------------------------------*/
@@ -669,7 +665,6 @@
             @extend %inline-icon.active;
         }
 */
-/*# sourceMappingURL=form.css.map*/
 
 /*------------------------------------*
  *  # Constants

@@ -270,8 +270,6 @@
 .theme--dark .dc-popover__bubble--error[data-popover-pos=bottom] .popover__bubble__arrow {
   border-bottom-color: #e31c4b; }
 
-/*# sourceMappingURL=popover.css.map*/
-
 /*------------------------------------*
  *  # Constants
  *------------------------------------*/
@@ -377,54 +375,54 @@
             @extend %inline-icon.active;
         }
 */
-.theme--light .modal-header__close .color1-fill {
+.theme--light .dc-modal-header__close .color1-fill {
   fill: rgba(0, 0, 0, 0.8); }
 
-.theme--light .modal-header__close .color1-stroke {
+.theme--light .dc-modal-header__close .color1-stroke {
   stroke: rgba(0, 0, 0, 0.8); }
 
-.theme--dark .modal-header__close .color1-fill {
+.theme--dark .dc-modal-header__close .color1-fill {
   fill: #fff; }
 
-.theme--dark .modal-header__close .color1-stroke {
+.theme--dark .dc-modal-header__close .color1-stroke {
   stroke: #fff; }
 
-.modal__container {
+.dc-modal__container {
   width: 736px;
   position: relative;
   overflow: hidden;
   border-radius: 4px;
   transition: transform 0.25s cubic-bezier(0.25, 0.1, 0.1, 0.25), opacity 0.25s cubic-bezier(0.25, 0.1, 0.1, 0.25); }
 
-.theme--light .modal__container {
+.theme--light .dc-modal__container {
   background-color: #fff;
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.4); }
 
-.theme--dark .modal__container {
+.theme--dark .dc-modal__container {
   background-color: #191c31;
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.72); }
 
-.modal__container--hide {
+.dc-modal__container--hide {
   display: none; }
 
-.modal__container--enter, .modal__container--exit {
+.dc-modal__container--enter, .dc-modal__container--exit {
   transform: translateY(50px);
   opacity: 0;
   pointer-events: none; }
 
-.modal__container--enter-done {
+.dc-modal__container--enter-done {
   transform: translateY(0);
   opacity: 1;
   pointer-events: auto; }
 
-.modal-header {
+.dc-modal-header {
   display: flex;
   justify-content: space-between;
   width: 100%;
   line-height: 24px;
   align-items: center; }
 
-.modal-header__title {
+.dc-modal-header__title {
   font-size: 1.6em;
   color: rgba(0, 0, 0, 0.8);
   font-weight: 700;
@@ -434,25 +432,23 @@
   line-height: 24px;
   padding: 16px; }
 
-.theme--light .modal-header__title {
+.theme--light .dc-modal-header__title {
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.8); }
 
-.theme--dark .modal-header__title {
+.theme--dark .dc-modal-header__title {
   background-color: #101320;
   color: #fff; }
 
-.modal-header__section {
+.dc-modal-header__section {
   flex-grow: 1;
   padding: 16px;
   line-height: 24px; }
 
-.modal-header__close {
+.dc-modal-header__close {
   display: block;
   cursor: pointer;
   padding-right: 16px; }
-
-/*# sourceMappingURL=modal.css.map*/
 
 /*------------------------------------*
  *  # Constants
@@ -897,8 +893,8 @@ html {
     margin: 0;
     padding: 0; }
 
-/** @define modal-header; */
-.modal-header__title--modal-settings {
+/** @define dc-modal-header; */
+.dc-modal-header__title--modal-settings {
   min-width: 28%; }
 
 /*------------------------------------*
@@ -1183,8 +1179,6 @@ html {
     bottom: -0.6em;
     right: -0.6em;
     border-width: 6px; } }
-
-/*# sourceMappingURL=button.css.map*/
 
 /*------------------------------------*
  *  # Constants
@@ -1863,7 +1857,130 @@ html {
 .theme--dark .dc-popover__bubble--error[data-popover-pos=bottom] .popover__bubble__arrow {
   border-bottom-color: #e31c4b; }
 
-/*# sourceMappingURL=dropdown.css.map*/
+/*------------------------------------*
+ *  # Constants
+ *------------------------------------*/
+/* stylelint-disable color-no-hex */
+/* stylelint-enable color-no-hex */
+/*------------------------------------*
+ *  # SASS Mixins and Functions
+ *------------------------------------*/
+/*
+ * SASS interpolation
+ */
+/*
+ * PX to EM
+ * @param $px - px value to be converted
+ * @param $base - base font size (in `em`)
+ * Note: 'em' values are calculate based on the element font-size
+ *       to properly converts 'px' to 'em', please pass in the element font-size with it
+ * Usage example:
+    padding: em(16px, 1.6em); // font-size in 'em'
+ */
+/*
+ * Set property by passing a property name, and values.
+ * @param $property name - padding, margin etc.
+ * @param $values        - values in `px` (space separated for multiple values)
+ * @param $font-size     - base font-size in `em`
+ * Usage example:
+   @include toEm(padding, 8px 16px 8px, 1.6em);
+ */
+/*
+ * Generate typefaces key-value pair of variable name and config
+ * Example:
+   --paragraph-center-bold-black: (14px, center, bold, black)
+ */
+/*
+ * Sets font-size, font-weight, color, text-transform, text-align and line-height
+ * Usage example:
+   @include setTypeface(16px, bold, black, uppercase);
+ */
+/*
+ * Set typefaces by passing a typeface variable name
+ * @param $var   - typeface variable
+ * @param $tt    - text-transform property
+ * @param $align - text-align property
+ * Usage example:
+   @include typeface(--paragraph-bold-black, uppercase, center);
+ */
+/*
+ * Range Slider Thumb styling is set here
+ */
+/*
+ * SVG icons colors
+ */
+/*
+ * Bar Spinner Animation
+ * @param $count    - number of bars
+ * @param $duration - duration of animation
+ * @param $phase    - each bar phase change delay
+ * Usage example:
+   @include createBarspinnerAnimation(5, 1.2s, 0,1);
+ */
+/*
+ * Implementation of themes
+ * generate sets of themes keys object property (dark / light)
+ * @param $themes - themes property
+ * Usage example:
+   @include themify($themes) { color: themed('background_color') }
+ */
+/*
+ * Generate typefaces key-value pair of themefy object
+ * Should be inside themify mixins
+ * Example:
+   @include themify($themes) { border-color: 1px solid themed('background_color') }
+ */
+/*
+ * Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+/*
+ * Themified Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+/*
+    Constants
+*/
+/*
+    Variables
+*/
+/*
+    List of all typefaces variables in the format: --$FONT_SIZES-$TEXT_ALIGN-$FONT_WEIGHTS-COLORS.
+    See $FONT_SIZES, $TEXT_ALIGN, $FONT_WEIGHTS, $COLORS maps above for references.
+    Variables name example: --title-center-semibold-red
+ */
+/*
+    to use styles without modifier class on .inline-icon
+    use @extend
+
+    e.g. style icon on parent hover:
+        a:hover .inline-icon {
+            @extend %inline-icon.active;
+        }
+*/
+.dc-checkbox {
+  display: flex;
+  justify-content: flex-start;
+  cursor: pointer;
+  align-items: flex-start; }
+
+.dc-checkbox__box {
+  width: 16px;
+  height: 16px;
+  transition: 0.3s ease-in-out;
+  flex-shrink: 0;
+  margin: 2px 8px 0 0;
+  border-radius: 2px;
+  align-self: flex-start;
+  border: 2px solid #7f8397; }
+
+.dc-checkbox__box--active {
+  border: none;
+  background-color: #f93; }
 
 /*------------------------------------*
  *  # Constants
@@ -5680,8 +5797,9 @@ table {
   display: flex;
   align-items: center;
   position: relative; }
+  .allow-equals__input-field {
+    margin: 0.6em 0 0; }
   .allow-equals__label {
-    margin: 0.6em 0 0;
     font-size: 1.4em;
     color: rgba(0, 0, 0, 0.8);
     font-weight: 400;
@@ -5969,36 +6087,6 @@ table {
       color: #7f8397; }
     .card-list .card-list__card-link {
       cursor: pointer; }
-
-.checkbox {
-  display: flex;
-  justify-content: flex-start;
-  cursor: pointer;
-  align-items: flex-start; }
-  .checkbox__box {
-    width: 16px;
-    height: 16px;
-    transition: 0.3s ease-in-out;
-    flex-shrink: 0;
-    margin: 2px 8px 0 0;
-    border-radius: 2px;
-    align-self: flex-start;
-    border: 2px solid #7f8397; }
-    .checkbox__box--active {
-      border: none;
-      background-color: #ff9933; }
-      .checkbox__box--active:after {
-        font-size: 1em;
-        color: #ffffff;
-        font-weight: 500;
-        text-transform: capitalize;
-        text-align: left;
-        line-height: unset;
-        content: 'L';
-        transform: scaleX(-1) rotate(-40deg);
-        position: absolute;
-        margin-left: 0.3em;
-        margin-top: -0.2em; }
 
 /** @define contract-audit; */
 .contract-audit__wrapper {
@@ -7796,8 +7884,8 @@ table {
     vertical-align: middle;
     margin: 0 8px; }
 
-/** @define fullscreen-dialog; weak */
-.fullscreen-dialog {
+/** @define mobile-dialog; weak */
+.mobile-dialog {
   box-sizing: border-box;
   position: fixed;
   top: 0;
@@ -7810,14 +7898,14 @@ table {
   pointer-events: none;
   transition: opacity 0.2s;
   background: #ffffff; }
-  .fullscreen-dialog--open {
+  .mobile-dialog--open {
     opacity: 1;
     pointer-events: auto; }
-    .fullscreen-dialog--open .fullscreen-dialog__content {
+    .mobile-dialog--open .mobile-dialog__content {
       transform: scale(1); }
-    .fullscreen-dialog--open .fullscreen-dialog__header {
+    .mobile-dialog--open .mobile-dialog__header {
       transform: translateY(0); }
-  .fullscreen-dialog__content {
+  .mobile-dialog__content {
     box-sizing: border-box;
     position: relative;
     padding-top: 3.6em;
@@ -7826,7 +7914,7 @@ table {
     background: #ffffff;
     transform: scale(0);
     transition: all 0.2s ease-out; }
-  .fullscreen-dialog__header {
+  .mobile-dialog__header {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -7842,44 +7930,44 @@ table {
     transform: translateY(-100%);
     transition: all 0.2s ease-out;
     transition-delay: 0.2s; }
-  .fullscreen-dialog__header-shadow-cover {
+  .mobile-dialog__header-shadow-cover {
     position: absolute;
     top: 0;
     width: 100%;
     height: 3.6em;
     z-index: 3;
     background-color: #ffffff; }
-  .fullscreen-dialog__header-shadow {
+  .mobile-dialog__header-shadow {
     position: fixed;
     top: 0;
     width: 100%;
     height: 3.2em;
     z-index: 2;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); }
-  .fullscreen-dialog__title {
+  .mobile-dialog__title {
     font-size: 1.3em;
     font-weight: 600;
     color: rgba(0, 0, 0, 0.8);
     margin: 0; }
-  .fullscreen-dialog__close-btn-icon {
+  .mobile-dialog__close-btn-icon {
     width: 2.4em;
     height: 2.4em; }
-  .fullscreen-dialog fieldset {
+  .mobile-dialog fieldset {
     border: none;
     margin-right: 0.5em;
     margin-left: 0.5em; }
-  .fullscreen-dialog__trade-type-info-modal {
+  .mobile-dialog__trade-type-info-modal {
     padding: 1.6em; }
-    .fullscreen-dialog__trade-type-info-modal .info-header {
+    .mobile-dialog__trade-type-info-modal .info-header {
       display: flex;
       padding: 0.8em; }
-      .fullscreen-dialog__trade-type-info-modal .info-header .title {
+      .mobile-dialog__trade-type-info-modal .info-header .title {
         margin-left: 1.5em;
         font-size: 1.4em;
         color: rgba(0, 0, 0, 0.8); }
-      .fullscreen-dialog__trade-type-info-modal .info-header span {
+      .mobile-dialog__trade-type-info-modal .info-header span {
         align-self: center; }
-    .fullscreen-dialog__trade-type-info-modal .info-gif {
+    .mobile-dialog__trade-type-info-modal .info-gif {
       padding: 0.8em;
       width: 90%;
       width: calc(100% - 1.6em);
@@ -7889,27 +7977,27 @@ table {
       background-color: #ffffff;
       border-radius: 4px;
       margin: 0 auto; }
-    .fullscreen-dialog__trade-type-info-modal .info-content {
+    .mobile-dialog__trade-type-info-modal .info-content {
       padding: 0.8em;
       margin: 0 auto;
       font-size: 1.4em;
       line-height: 2em;
       color: rgba(0, 0, 0, 0.8); }
-    .fullscreen-dialog__trade-type-info-modal .info-choose button {
+    .mobile-dialog__trade-type-info-modal .info-choose button {
       background: #ff9933;
       color: #ffffff;
       font-weight: bold;
       margin: 1.6em 0;
       width: 100%; }
-    .fullscreen-dialog__trade-type-info-modal .info-navigation {
+    .mobile-dialog__trade-type-info-modal .info-navigation {
       display: flex;
       align-self: flex-end;
       margin-top: 1.6em; }
-      .fullscreen-dialog__trade-type-info-modal .info-navigation__list {
+      .mobile-dialog__trade-type-info-modal .info-navigation__list {
         display: inline-block;
         text-align: center;
         margin: 0 auto; }
-        .fullscreen-dialog__trade-type-info-modal .info-navigation__list .circle-button {
+        .mobile-dialog__trade-type-info-modal .info-navigation__list .circle-button {
           width: 1em;
           height: 1em;
           border-radius: 50%;
@@ -7917,7 +8005,7 @@ table {
           margin: 0 0.5em;
           background-color: rgba(0, 0, 0, 0.16);
           cursor: pointer; }
-          .fullscreen-dialog__trade-type-info-modal .info-navigation__list .circle-button.active {
+          .mobile-dialog__trade-type-info-modal .info-navigation__list .circle-button.active {
             background-color: rgba(0, 0, 0, 0.04); }
 
 /** @define cashier */
@@ -7994,18 +8082,18 @@ table {
     font-weight: bold;
     text-decoration: none; }
 
-/** @define modal; */
-.modal__container_modal-cashier {
+/** @define dc-modal; */
+.dc-modal__container_modal-cashier {
   width: 915px; }
 
-/** @define modal-header; */
-.theme--light .modal-header__modal-cashier {
+/** @define dc-modal-header; */
+.theme--light .dc-modal-header__modal-cashier {
   box-shadow: inset 0 -1px 0 0 #f4f4f6; }
 
-.theme--dark .modal-header__modal-cashier {
+.theme--dark .dc-modal-header__modal-cashier {
   box-shadow: inset 0 -1px 0 0 #101320; }
 
-.modal-header__title--modal-cashier {
+.dc-modal-header__title--modal-cashier {
   min-width: 28%; }
 
 .contract-container {
