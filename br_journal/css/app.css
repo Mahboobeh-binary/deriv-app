@@ -787,7 +787,7 @@
   stroke: var(--text-prominent); }
 
 .dc-modal__container {
-  width: 736px;
+  min-width: 400px;
   position: relative;
   overflow: hidden;
   border-radius: 4px;
