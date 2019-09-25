@@ -3466,6 +3466,7 @@
   display: block;
   font-size: 10px; }
   .journal__table--header {
+    position: fixed;
     display: table;
     font-size: 12px;
     font-weight: bold;
