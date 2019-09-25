@@ -3397,65 +3397,65 @@ html {
             @extend %inline-icon.active;
         }
 */
-.advanced-simple-toggle__icon, .footer__link:hover .footer__icon, .footer__icon, .contract-drawer svg, .positions-drawer__icon-close svg, .cashier__transferred-icon {
+.advanced-simple-toggle__icon, .footer__link:hover .footer__icon, .footer__icon, .contract-drawer svg, .positions-drawer__icon-close svg, .account-settings-toggle svg, .cashier__transferred-icon {
   /* postcss-bem-linter: ignore */
   /* postcss-bem-linter: ignore */
   /* postcss-bem-linter: ignore */
   /* postcss-bem-linter: ignore */ }
-  .advanced-simple-toggle__icon .color1-fill, .footer__link:hover .footer__icon .color1-fill, .footer__icon .color1-fill, .contract-drawer svg .color1-fill, .positions-drawer__icon-close svg .color1-fill, .cashier__transferred-icon .color1-fill {
+  .advanced-simple-toggle__icon .color1-fill, .footer__link:hover .footer__icon .color1-fill, .footer__icon .color1-fill, .contract-drawer svg .color1-fill, .positions-drawer__icon-close svg .color1-fill, .account-settings-toggle svg .color1-fill, .cashier__transferred-icon .color1-fill {
     fill: var(--text-general); }
-  .advanced-simple-toggle__icon .color1-stroke, .footer__link:hover .footer__icon .color1-stroke, .footer__icon .color1-stroke, .contract-drawer svg .color1-stroke, .positions-drawer__icon-close svg .color1-stroke, .cashier__transferred-icon .color1-stroke {
+  .advanced-simple-toggle__icon .color1-stroke, .footer__link:hover .footer__icon .color1-stroke, .footer__icon .color1-stroke, .contract-drawer svg .color1-stroke, .positions-drawer__icon-close svg .color1-stroke, .account-settings-toggle svg .color1-stroke, .cashier__transferred-icon .color1-stroke {
     stroke: var(--text-general); }
-  .advanced-simple-toggle__icon .color2-fill, .footer__link:hover .footer__icon .color2-fill, .footer__icon .color2-fill, .contract-drawer svg .color2-fill, .positions-drawer__icon-close svg .color2-fill, .cashier__transferred-icon .color2-fill {
+  .advanced-simple-toggle__icon .color2-fill, .footer__link:hover .footer__icon .color2-fill, .footer__icon .color2-fill, .contract-drawer svg .color2-fill, .positions-drawer__icon-close svg .color2-fill, .account-settings-toggle svg .color2-fill, .cashier__transferred-icon .color2-fill {
     fill: none; }
-  .advanced-simple-toggle__icon .color2-stroke, .footer__link:hover .footer__icon .color2-stroke, .footer__icon .color2-stroke, .contract-drawer svg .color2-stroke, .positions-drawer__icon-close svg .color2-stroke, .cashier__transferred-icon .color2-stroke {
+  .advanced-simple-toggle__icon .color2-stroke, .footer__link:hover .footer__icon .color2-stroke, .footer__icon .color2-stroke, .contract-drawer svg .color2-stroke, .positions-drawer__icon-close svg .color2-stroke, .account-settings-toggle svg .color2-stroke, .cashier__transferred-icon .color2-stroke {
     stroke: none; }
-  .active.advanced-simple-toggle__icon, .header__menu-link--active .header__icon, .footer__link:hover .active.footer__icon, .active.footer__icon, .ic-settings--active .ic-settings__icon, .contract-drawer svg.active, .positions-drawer__icon-close svg.active, .active.cashier__transferred-icon {
+  .active.advanced-simple-toggle__icon, .header__menu-link--active .header__icon, .footer__link:hover .active.footer__icon, .active.footer__icon, .ic-settings--active .ic-settings__icon, .contract-drawer svg.active, .positions-drawer__icon-close svg.active, .account-settings-toggle svg.active, .account-settings-toggle:hover svg, .active.cashier__transferred-icon {
     /* postcss-bem-linter: ignore */
     /* postcss-bem-linter: ignore */
     /* postcss-bem-linter: ignore */
     /* postcss-bem-linter: ignore */ }
-    .active.advanced-simple-toggle__icon .color1-fill, .header__menu-link--active .header__icon .color1-fill, .active.footer__icon .color1-fill, .ic-settings--active .ic-settings__icon .color1-fill, .contract-drawer svg.active .color1-fill, .positions-drawer__icon-close svg.active .color1-fill, .active.cashier__transferred-icon .color1-fill {
+    .active.advanced-simple-toggle__icon .color1-fill, .header__menu-link--active .header__icon .color1-fill, .active.footer__icon .color1-fill, .ic-settings--active .ic-settings__icon .color1-fill, .contract-drawer svg.active .color1-fill, .positions-drawer__icon-close svg.active .color1-fill, .account-settings-toggle svg.active .color1-fill, .account-settings-toggle:hover svg .color1-fill, .active.cashier__transferred-icon .color1-fill {
       fill: var(--text-prominent); }
-    .active.advanced-simple-toggle__icon .color1-stroke, .header__menu-link--active .header__icon .color1-stroke, .active.footer__icon .color1-stroke, .ic-settings--active .ic-settings__icon .color1-stroke, .contract-drawer svg.active .color1-stroke, .positions-drawer__icon-close svg.active .color1-stroke, .active.cashier__transferred-icon .color1-stroke {
+    .active.advanced-simple-toggle__icon .color1-stroke, .header__menu-link--active .header__icon .color1-stroke, .active.footer__icon .color1-stroke, .ic-settings--active .ic-settings__icon .color1-stroke, .contract-drawer svg.active .color1-stroke, .positions-drawer__icon-close svg.active .color1-stroke, .account-settings-toggle svg.active .color1-stroke, .account-settings-toggle:hover svg .color1-stroke, .active.cashier__transferred-icon .color1-stroke {
       stroke: var(--text-prominent); }
-    .active.advanced-simple-toggle__icon .color2-fill, .header__menu-link--active .header__icon .color2-fill, .active.footer__icon .color2-fill, .ic-settings--active .ic-settings__icon .color2-fill, .contract-drawer svg.active .color2-fill, .positions-drawer__icon-close svg.active .color2-fill, .active.cashier__transferred-icon .color2-fill {
+    .active.advanced-simple-toggle__icon .color2-fill, .header__menu-link--active .header__icon .color2-fill, .active.footer__icon .color2-fill, .ic-settings--active .ic-settings__icon .color2-fill, .contract-drawer svg.active .color2-fill, .positions-drawer__icon-close svg.active .color2-fill, .account-settings-toggle svg.active .color2-fill, .account-settings-toggle:hover svg .color2-fill, .active.cashier__transferred-icon .color2-fill {
       fill: none; }
-    .active.advanced-simple-toggle__icon .color2-stroke, .header__menu-link--active .header__icon .color2-stroke, .active.footer__icon .color2-stroke, .ic-settings--active .ic-settings__icon .color2-stroke, .contract-drawer svg.active .color2-stroke, .positions-drawer__icon-close svg.active .color2-stroke, .active.cashier__transferred-icon .color2-stroke {
+    .active.advanced-simple-toggle__icon .color2-stroke, .header__menu-link--active .header__icon .color2-stroke, .active.footer__icon .color2-stroke, .ic-settings--active .ic-settings__icon .color2-stroke, .contract-drawer svg.active .color2-stroke, .positions-drawer__icon-close svg.active .color2-stroke, .account-settings-toggle svg.active .color2-stroke, .account-settings-toggle:hover svg .color2-stroke, .active.cashier__transferred-icon .color2-stroke {
       stroke: none; }
-  .disabled.advanced-simple-toggle__icon, .footer__link:hover .disabled.footer__icon, .disabled.footer__icon, .contract-drawer svg.disabled, .positions-drawer__icon-close svg.disabled, .disabled.cashier__transferred-icon {
+  .disabled.advanced-simple-toggle__icon, .footer__link:hover .disabled.footer__icon, .disabled.footer__icon, .contract-drawer svg.disabled, .positions-drawer__icon-close svg.disabled, .account-settings-toggle svg.disabled, .disabled.cashier__transferred-icon {
     /* postcss-bem-linter: ignore */
     /* postcss-bem-linter: ignore */
     /* postcss-bem-linter: ignore */
     /* postcss-bem-linter: ignore */ }
-    .disabled.advanced-simple-toggle__icon .color1-fill, .disabled.footer__icon .color1-fill, .contract-drawer svg.disabled .color1-fill, .positions-drawer__icon-close svg.disabled .color1-fill, .disabled.cashier__transferred-icon .color1-fill {
+    .disabled.advanced-simple-toggle__icon .color1-fill, .disabled.footer__icon .color1-fill, .contract-drawer svg.disabled .color1-fill, .positions-drawer__icon-close svg.disabled .color1-fill, .account-settings-toggle svg.disabled .color1-fill, .disabled.cashier__transferred-icon .color1-fill {
       fill: var(--text-disabled); }
-    .disabled.advanced-simple-toggle__icon .color1-stroke, .disabled.footer__icon .color1-stroke, .contract-drawer svg.disabled .color1-stroke, .positions-drawer__icon-close svg.disabled .color1-stroke, .disabled.cashier__transferred-icon .color1-stroke {
+    .disabled.advanced-simple-toggle__icon .color1-stroke, .disabled.footer__icon .color1-stroke, .contract-drawer svg.disabled .color1-stroke, .positions-drawer__icon-close svg.disabled .color1-stroke, .account-settings-toggle svg.disabled .color1-stroke, .disabled.cashier__transferred-icon .color1-stroke {
       stroke: var(--text-disabled); }
-    .disabled.advanced-simple-toggle__icon .color2-fill, .disabled.footer__icon .color2-fill, .contract-drawer svg.disabled .color2-fill, .positions-drawer__icon-close svg.disabled .color2-fill, .disabled.cashier__transferred-icon .color2-fill {
+    .disabled.advanced-simple-toggle__icon .color2-fill, .disabled.footer__icon .color2-fill, .contract-drawer svg.disabled .color2-fill, .positions-drawer__icon-close svg.disabled .color2-fill, .account-settings-toggle svg.disabled .color2-fill, .disabled.cashier__transferred-icon .color2-fill {
       fill: none; }
-    .disabled.advanced-simple-toggle__icon .color2-stroke, .disabled.footer__icon .color2-stroke, .contract-drawer svg.disabled .color2-stroke, .positions-drawer__icon-close svg.disabled .color2-stroke, .disabled.cashier__transferred-icon .color2-stroke {
+    .disabled.advanced-simple-toggle__icon .color2-stroke, .disabled.footer__icon .color2-stroke, .contract-drawer svg.disabled .color2-stroke, .positions-drawer__icon-close svg.disabled .color2-stroke, .account-settings-toggle svg.disabled .color2-stroke, .disabled.cashier__transferred-icon .color2-stroke {
       stroke: none; }
-  .white.advanced-simple-toggle__icon, .footer__link:hover .white.footer__icon, .white.footer__icon, .contract-drawer svg.white, .positions-drawer__icon-close svg.white, .white.cashier__transferred-icon {
+  .white.advanced-simple-toggle__icon, .footer__link:hover .white.footer__icon, .white.footer__icon, .contract-drawer svg.white, .positions-drawer__icon-close svg.white, .account-settings-toggle svg.white, .white.cashier__transferred-icon {
     /* postcss-bem-linter: ignore */
     /* postcss-bem-linter: ignore */ }
-    .white.advanced-simple-toggle__icon .color1-fill, .white.footer__icon .color1-fill, .contract-drawer svg.white .color1-fill, .positions-drawer__icon-close svg.white .color1-fill, .white.cashier__transferred-icon .color1-fill {
+    .white.advanced-simple-toggle__icon .color1-fill, .white.footer__icon .color1-fill, .contract-drawer svg.white .color1-fill, .positions-drawer__icon-close svg.white .color1-fill, .account-settings-toggle svg.white .color1-fill, .white.cashier__transferred-icon .color1-fill {
       fill: var(--text-prominent); }
-    .white.advanced-simple-toggle__icon .color1-stroke, .white.footer__icon .color1-stroke, .contract-drawer svg.white .color1-stroke, .positions-drawer__icon-close svg.white .color1-stroke, .white.cashier__transferred-icon .color1-stroke {
+    .white.advanced-simple-toggle__icon .color1-stroke, .white.footer__icon .color1-stroke, .contract-drawer svg.white .color1-stroke, .positions-drawer__icon-close svg.white .color1-stroke, .account-settings-toggle svg.white .color1-stroke, .white.cashier__transferred-icon .color1-stroke {
       stroke: var(--text-prominent); }
-  .border_hover_color.advanced-simple-toggle__icon, .footer__link:hover .border_hover_color.footer__icon, .border_hover_color.footer__icon, .contract-drawer svg.border_hover_color, .positions-drawer__icon-close svg.border_hover_color, .border_hover_color.cashier__transferred-icon {
+  .border_hover_color.advanced-simple-toggle__icon, .footer__link:hover .border_hover_color.footer__icon, .border_hover_color.footer__icon, .contract-drawer svg.border_hover_color, .positions-drawer__icon-close svg.border_hover_color, .account-settings-toggle svg.border_hover_color, .border_hover_color.cashier__transferred-icon {
     /* postcss-bem-linter: ignore */
     /* postcss-bem-linter: ignore */ }
-    .border_hover_color.advanced-simple-toggle__icon .color1-fill, .border_hover_color.footer__icon .color1-fill, .contract-drawer svg.border_hover_color .color1-fill, .positions-drawer__icon-close svg.border_hover_color .color1-fill, .border_hover_color.cashier__transferred-icon .color1-fill {
+    .border_hover_color.advanced-simple-toggle__icon .color1-fill, .border_hover_color.footer__icon .color1-fill, .contract-drawer svg.border_hover_color .color1-fill, .positions-drawer__icon-close svg.border_hover_color .color1-fill, .account-settings-toggle svg.border_hover_color .color1-fill, .border_hover_color.cashier__transferred-icon .color1-fill {
       fill: var(--text-prominent); }
-    .border_hover_color.advanced-simple-toggle__icon .color1-stroke, .border_hover_color.footer__icon .color1-stroke, .contract-drawer svg.border_hover_color .color1-stroke, .positions-drawer__icon-close svg.border_hover_color .color1-stroke, .border_hover_color.cashier__transferred-icon .color1-stroke {
+    .border_hover_color.advanced-simple-toggle__icon .color1-stroke, .border_hover_color.footer__icon .color1-stroke, .contract-drawer svg.border_hover_color .color1-stroke, .positions-drawer__icon-close svg.border_hover_color .color1-stroke, .account-settings-toggle svg.border_hover_color .color1-stroke, .border_hover_color.cashier__transferred-icon .color1-stroke {
       stroke: var(--text-prominent); }
-  .secondary.advanced-simple-toggle__icon, .footer__link:hover .secondary.footer__icon, .secondary.footer__icon, .contract-drawer svg.secondary, .positions-drawer__icon-close svg.secondary, .secondary.cashier__transferred-icon {
+  .secondary.advanced-simple-toggle__icon, .footer__link:hover .secondary.footer__icon, .secondary.footer__icon, .contract-drawer svg.secondary, .positions-drawer__icon-close svg.secondary, .account-settings-toggle svg.secondary, .secondary.cashier__transferred-icon {
     /* postcss-bem-linter: ignore */
     /* postcss-bem-linter: ignore */ }
-    .secondary.advanced-simple-toggle__icon .color1-fill, .secondary.footer__icon .color1-fill, .contract-drawer svg.secondary .color1-fill, .positions-drawer__icon-close svg.secondary .color1-fill, .secondary.cashier__transferred-icon .color1-fill {
+    .secondary.advanced-simple-toggle__icon .color1-fill, .secondary.footer__icon .color1-fill, .contract-drawer svg.secondary .color1-fill, .positions-drawer__icon-close svg.secondary .color1-fill, .account-settings-toggle svg.secondary .color1-fill, .secondary.cashier__transferred-icon .color1-fill {
       fill: var(--text-less-prominent); }
-    .secondary.advanced-simple-toggle__icon .color1-stroke, .secondary.footer__icon .color1-stroke, .contract-drawer svg.secondary .color1-stroke, .positions-drawer__icon-close svg.secondary .color1-stroke, .secondary.cashier__transferred-icon .color1-stroke {
+    .secondary.advanced-simple-toggle__icon .color1-stroke, .secondary.footer__icon .color1-stroke, .contract-drawer svg.secondary .color1-stroke, .positions-drawer__icon-close svg.secondary .color1-stroke, .account-settings-toggle svg.secondary .color1-stroke, .secondary.cashier__transferred-icon .color1-stroke {
       stroke: var(--text-less-prominent); }
 
 /* postcss-bem-linter: ignore */
@@ -5699,6 +5699,10 @@ table {
   100% {
     left: 107%;
     right: -8%; } }
+
+.account-settings-toggle svg {
+  height: 24px;
+  width: 24px; }
 
 /** @define error-box */
 .error-box {

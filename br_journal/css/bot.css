@@ -3496,6 +3496,14 @@
       width: 75%; }
   .journal__table--date, .journal__table--time {
     line-height: 1.4em; }
+  .journal__table--bold {
+    font-weight: 700; }
+  .journal__table--red {
+    color: var(--text-loss-danger); }
+  .journal__table--green {
+    color: var(--text-profit-success); }
+  .journal__table--blue {
+    color: var(--status-info); }
 
 /*------------------------------------*
  *  # Constants
