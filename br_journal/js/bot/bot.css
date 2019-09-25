@@ -3730,11 +3730,13 @@
   text-align: center; }
 
 .run-panel__button {
-  margin-left: 0 !important; }
+  margin-left: 0 !important;
+  opacity: 1; }
   .run-panel__button--run {
     background: var(--purchase-main-1) !important; }
   .run-panel__button--disable {
-    pointer-events: none; }
+    pointer-events: none;
+    opacity: 0.5; }
 
 .run-panel__icon-info {
   vertical-align: middle; }
