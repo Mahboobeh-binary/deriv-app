@@ -229,6 +229,7 @@
   position: absolute;
   left: 250px;
   background-color: #ffffff;
+  height: calc(100% - 40px);
   max-height: calc(100% - 40px);
   z-index: 1;
   border-radius: 10px;
@@ -238,16 +239,14 @@
   margin-top: 20px;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4);
   min-width: 400px; }
+  .flyout__item:hover .flyout__button-add-hide {
+    display: block; }
   .flyout__content {
     overflow: auto; }
   .flyout__search {
     left: 0; }
   .flyout__block-workspace {
     margin-bottom: 15px; }
-    .flyout__block-workspace * .blocklySvg {
-      background-color: inherit !important; }
-    .flyout__block-workspace * .blocklyMainBackground {
-      stroke: none !important; }
   .flyout__button {
     border: none;
     border-radius: 4px;
@@ -268,7 +267,10 @@
     .flyout__button-add {
       background-color: #ff444f;
       color: #ffffff; }
+      .flyout__button-add-hide {
+        display: none; }
     .flyout__button-back {
+      padding-bottom: 0;
       align-self: center;
       background-color: transparent;
       color: #000000; }
@@ -278,25 +280,34 @@
       margin-left: 1em;
       color: rgba(0, 0, 0, 0.8);
       background-color: #f4f4f6; }
-  .flyout__item:not(:last-of-type) {
-    margin-bottom: 30px; }
-  .flyout__item-header {
-    display: flex;
-    margin-top: 15px;
-    margin-bottom: 10px; }
-  .flyout__item-label {
-    font-weight: bold; }
-  .flyout__item-buttons {
-    margin-left: auto;
-    display: flex;
-    justify-content: flex-end; }
-  .flyout__item-info {
-    cursor: pointer;
-    color: #e31c4b;
-    margin-left: 0.2em; }
-  .flyout__item-description {
-    font-size: 0.8em;
-    margin-bottom: 1em; }
+      .flyout__button-next:focus, .flyout__button-previous:focus {
+        outline: none; }
+  .flyout__item {
+    line-height: 1.3em;
+    font-size: 14px; }
+    .flyout__item:not(:last-of-type) {
+      margin-bottom: 30px; }
+    .flyout__item-header {
+      display: flex;
+      margin-top: 15px;
+      margin-bottom: 10px; }
+    .flyout__item-label {
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 2em; }
+    .flyout__item-buttons {
+      margin-left: auto;
+      display: flex;
+      justify-content: flex-end; }
+    .flyout__item-info {
+      cursor: pointer;
+      font-weight: bold;
+      display: block;
+      color: #e31c4b; }
+    .flyout__item-description {
+      font-size: 14px;
+      margin-bottom: 1em;
+      line-height: 1.3em; }
   .flyout__image {
     width: 100%;
     height: auto;
@@ -306,24 +317,26 @@
     height: 20vh;
     border-radius: 0.5em; }
   .flyout__help {
-    padding: 0; }
+    padding: 0;
+    height: 100%; }
     .flyout__help-header {
-      padding: 1.2em 1em;
+      padding: 0.5em 1em;
       display: flex;
       background-color: #f4f4f6; }
     .flyout__help-content {
       padding: 1.5em;
+      font-size: 0.8em;
       overflow-y: auto;
-      height: calc(100vh - 300px); }
+      height: calc(100vh - 290px); }
       .flyout__help-content .flyout__item {
-        margin-bottom: 2em; }
+        margin-bottom: 0.8em; }
     .flyout__help-title {
       align-self: center;
-      font-size: 25px;
+      font-size: 20px;
       font-weight: bold; }
     .flyout__help-footer {
       text-align: right;
-      padding: 1.2em 0.8em;
+      padding: 0.5em 0.8em;
       border-top: solid 0.1em #f4f4f6; }
 
 /*------------------------------------*
@@ -555,8 +568,10 @@
 #scratch_div {
   position: relative; }
 
-.blocklyText {
-  fill: #000 !important; }
+.blocklyTextRootBlockHeader {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333; }
 
 .blocklyMainWorkspaceScrollbar {
   display: none; }
@@ -812,11 +827,11 @@
     display: flex;
     margin: auto; }
     .toolbox__category-arrow--back {
-      margin-left: 15px;
-      fill: #fff;
+      margin-left: 10px;
+      fill: #333;
       transform: rotate(90deg); }
     .toolbox__category-arrow--open {
-      margin-right: 15px;
+      margin-right: 10px;
       transform: rotate(270deg); }
   .toolbox__category-colour {
     width: 5px;
@@ -824,59 +839,129 @@
   .toolbox__category--search .toolbox__category-colour {
     background-color: #afffda; }
   .toolbox__category-return .toolbox__category--search {
-    background-color: #afffda; }
+    background-color: #ebebeb;
+    color: #333;
+    max-height: 38px; }
   .toolbox__category--trade_parameters .toolbox__category-colour {
-    background-color: #30409f; }
+    background-color: #f3f3f3; }
   .toolbox__category-return .toolbox__category--trade_parameters {
-    background-color: #30409f; }
+    background-color: #ebebeb;
+    color: #333;
+    max-height: 38px; }
   .toolbox__category--purchase_conditions .toolbox__category-colour {
-    background-color: #00897b; }
+    background-color: #f3f3f3; }
   .toolbox__category-return .toolbox__category--purchase_conditions {
-    background-color: #00897b; }
+    background-color: #ebebeb;
+    color: #333;
+    max-height: 38px; }
   .toolbox__category--sell_conditions .toolbox__category-colour {
-    background-color: #78909c; }
+    background-color: #f3f3f3; }
   .toolbox__category-return .toolbox__category--sell_conditions {
-    background-color: #78909c; }
+    background-color: #ebebeb;
+    color: #333;
+    max-height: 38px; }
   .toolbox__category--trade_results .toolbox__category-colour {
-    background-color: #d81a60; }
+    background-color: #f3f3f3; }
   .toolbox__category-return .toolbox__category--trade_results {
-    background-color: #d81a60; }
-  .toolbox__category--technical_analysis .toolbox__category-colour {
-    background-color: #689e38; }
-  .toolbox__category-return .toolbox__category--technical_analysis {
-    background-color: #689e38; }
+    background-color: #ebebeb;
+    color: #333;
+    max-height: 38px; }
+  .toolbox__category--contract_details .toolbox__category-colour {
+    background-color: #f3f3f3; }
+  .toolbox__category-return .toolbox__category--contract_details {
+    background-color: #ebebeb;
+    color: #333;
+    max-height: 38px; }
+  .toolbox__category--analysis .toolbox__category-colour {
+    background-color: #f3f3f3; }
+  .toolbox__category-return .toolbox__category--analysis {
+    background-color: #ebebeb;
+    color: #333;
+    max-height: 38px; }
+  .toolbox__category--tick_analysis .toolbox__category-colour {
+    background-color: #f3f3f3; }
+  .toolbox__category-return .toolbox__category--tick_analysis {
+    background-color: #ebebeb;
+    color: #333;
+    max-height: 38px; }
+  .toolbox__category--indicators .toolbox__category-colour {
+    background-color: #f3f3f3; }
+  .toolbox__category-return .toolbox__category--indicators {
+    background-color: #ebebeb;
+    color: #333;
+    max-height: 38px; }
+  .toolbox__category--stats .toolbox__category-colour {
+    background-color: #f3f3f3; }
+  .toolbox__category-return .toolbox__category--stats {
+    background-color: #ebebeb;
+    color: #333;
+    max-height: 38px; }
   .toolbox__category--utility .toolbox__category-colour {
-    background-color: #8e25aa; }
+    background-color: #f3f3f3; }
   .toolbox__category-return .toolbox__category--utility {
-    background-color: #8e25aa; }
+    background-color: #ebebeb;
+    color: #333;
+    max-height: 38px; }
   .toolbox__category--math .toolbox__category-colour {
-    background-color: #fc8b01; }
+    background-color: #f3f3f3; }
   .toolbox__category-return .toolbox__category--math {
-    background-color: #fc8b01; }
+    background-color: #ebebeb;
+    color: #333;
+    max-height: 38px; }
   .toolbox__category--text .toolbox__category-colour {
-    background-color: #5d4037; }
+    background-color: #f3f3f3; }
   .toolbox__category-return .toolbox__category--text {
-    background-color: #5d4037; }
+    background-color: #ebebeb;
+    color: #333;
+    max-height: 38px; }
   .toolbox__category--logic .toolbox__category-colour {
-    background-color: #1876d2; }
+    background-color: #f3f3f3; }
   .toolbox__category-return .toolbox__category--logic {
-    background-color: #1876d2; }
+    background-color: #ebebeb;
+    color: #333;
+    max-height: 38px; }
   .toolbox__category--lists .toolbox__category-colour {
-    background-color: #e53836; }
+    background-color: #f3f3f3; }
   .toolbox__category-return .toolbox__category--lists {
-    background-color: #e53836; }
+    background-color: #ebebeb;
+    color: #333;
+    max-height: 38px; }
   .toolbox__category--custom_functions .toolbox__category-colour {
-    background-color: #00acc1; }
+    background-color: #f3f3f3; }
   .toolbox__category-return .toolbox__category--custom_functions {
-    background-color: #00acc1; }
+    background-color: #ebebeb;
+    color: #333;
+    max-height: 38px; }
   .toolbox__category--variables .toolbox__category-colour {
-    background-color: #616161; }
+    background-color: #f3f3f3; }
   .toolbox__category-return .toolbox__category--variables {
-    background-color: #616161; }
+    background-color: #ebebeb;
+    color: #333;
+    max-height: 38px; }
   .toolbox__category--loops .toolbox__category-colour {
-    background-color: #afb42b; }
+    background-color: #f3f3f3; }
   .toolbox__category-return .toolbox__category--loops {
-    background-color: #afb42b; }
+    background-color: #ebebeb;
+    color: #333;
+    max-height: 38px; }
+  .toolbox__category--time .toolbox__category-colour {
+    background-color: #f3f3f3; }
+  .toolbox__category-return .toolbox__category--time {
+    background-color: #ebebeb;
+    color: #333;
+    max-height: 38px; }
+  .toolbox__category--misc .toolbox__category-colour {
+    background-color: #f3f3f3; }
+  .toolbox__category-return .toolbox__category--misc {
+    background-color: #ebebeb;
+    color: #333;
+    max-height: 38px; }
+  .toolbox__category--notifications .toolbox__category-colour {
+    background-color: #f3f3f3; }
+  .toolbox__category-return .toolbox__category--notifications {
+    background-color: #ebebeb;
+    color: #333;
+    max-height: 38px; }
   .toolbox__category-menu {
     display: flex;
     flex-direction: column;
@@ -886,26 +971,27 @@
     overflow-x: hidden; }
   .toolbox__category-return {
     cursor: pointer;
-    color: #fff;
     text-align: center; }
     .toolbox__category-return .toolbox__label {
-      margin-left: -30px; }
+      margin-left: -20px; }
   .toolbox__category-text {
     align-self: center;
-    margin: 15px;
+    margin: 10px;
     width: 100%; }
   .toolbox__description {
-    font-size: 1.3em; }
+    font-size: 12px;
+    line-height: 1.4; }
   .toolbox__icon {
     display: flex;
     align-self: center;
-    margin-right: 15px; }
+    margin-right: 10px; }
     .toolbox__icon > svg {
       height: 25px;
       width: 25px; }
   .toolbox__label {
     font-weight: bold;
-    font-size: 1.6em; }
+    font-size: 14px;
+    line-height: 1.4; }
   .toolbox__row {
     cursor: pointer;
     border-top: 1px solid #ebebeb; }
@@ -917,72 +1003,107 @@
       background-color: rgba(175, 255, 218, 0.1);
       transition: background-color 0.25s ease; }
     .toolbox__row .toolbox__category--trade_parameters:hover:not(.toolbox__category--selected) {
-      background-image: linear-gradient(to right, #fff 25%, rgba(48, 64, 159, 0.2) 100%); }
+      background-image: linear-gradient(to right, #fff 25%, rgba(243, 243, 243, 0.2) 100%); }
     .toolbox__row .toolbox__category--trade_parameters.toolbox__category--selected {
-      background-color: rgba(48, 64, 159, 0.1);
+      background-color: rgba(243, 243, 243, 0.1);
       transition: background-color 0.25s ease; }
     .toolbox__row .toolbox__category--purchase_conditions:hover:not(.toolbox__category--selected) {
-      background-image: linear-gradient(to right, #fff 25%, rgba(0, 137, 123, 0.2) 100%); }
+      background-image: linear-gradient(to right, #fff 25%, rgba(243, 243, 243, 0.2) 100%); }
     .toolbox__row .toolbox__category--purchase_conditions.toolbox__category--selected {
-      background-color: rgba(0, 137, 123, 0.1);
+      background-color: rgba(243, 243, 243, 0.1);
       transition: background-color 0.25s ease; }
     .toolbox__row .toolbox__category--sell_conditions:hover:not(.toolbox__category--selected) {
-      background-image: linear-gradient(to right, #fff 25%, rgba(120, 144, 156, 0.2) 100%); }
+      background-image: linear-gradient(to right, #fff 25%, rgba(243, 243, 243, 0.2) 100%); }
     .toolbox__row .toolbox__category--sell_conditions.toolbox__category--selected {
-      background-color: rgba(120, 144, 156, 0.1);
+      background-color: rgba(243, 243, 243, 0.1);
       transition: background-color 0.25s ease; }
     .toolbox__row .toolbox__category--trade_results:hover:not(.toolbox__category--selected) {
-      background-image: linear-gradient(to right, #fff 25%, rgba(216, 26, 96, 0.2) 100%); }
+      background-image: linear-gradient(to right, #fff 25%, rgba(243, 243, 243, 0.2) 100%); }
     .toolbox__row .toolbox__category--trade_results.toolbox__category--selected {
-      background-color: rgba(216, 26, 96, 0.1);
+      background-color: rgba(243, 243, 243, 0.1);
       transition: background-color 0.25s ease; }
-    .toolbox__row .toolbox__category--technical_analysis:hover:not(.toolbox__category--selected) {
-      background-image: linear-gradient(to right, #fff 25%, rgba(104, 158, 56, 0.2) 100%); }
-    .toolbox__row .toolbox__category--technical_analysis.toolbox__category--selected {
-      background-color: rgba(104, 158, 56, 0.1);
+    .toolbox__row .toolbox__category--contract_details:hover:not(.toolbox__category--selected) {
+      background-image: linear-gradient(to right, #fff 25%, rgba(243, 243, 243, 0.2) 100%); }
+    .toolbox__row .toolbox__category--contract_details.toolbox__category--selected {
+      background-color: rgba(243, 243, 243, 0.1);
+      transition: background-color 0.25s ease; }
+    .toolbox__row .toolbox__category--analysis:hover:not(.toolbox__category--selected) {
+      background-image: linear-gradient(to right, #fff 25%, rgba(243, 243, 243, 0.2) 100%); }
+    .toolbox__row .toolbox__category--analysis.toolbox__category--selected {
+      background-color: rgba(243, 243, 243, 0.1);
+      transition: background-color 0.25s ease; }
+    .toolbox__row .toolbox__category--tick_analysis:hover:not(.toolbox__category--selected) {
+      background-image: linear-gradient(to right, #fff 25%, rgba(243, 243, 243, 0.2) 100%); }
+    .toolbox__row .toolbox__category--tick_analysis.toolbox__category--selected {
+      background-color: rgba(243, 243, 243, 0.1);
+      transition: background-color 0.25s ease; }
+    .toolbox__row .toolbox__category--indicators:hover:not(.toolbox__category--selected) {
+      background-image: linear-gradient(to right, #fff 25%, rgba(243, 243, 243, 0.2) 100%); }
+    .toolbox__row .toolbox__category--indicators.toolbox__category--selected {
+      background-color: rgba(243, 243, 243, 0.1);
+      transition: background-color 0.25s ease; }
+    .toolbox__row .toolbox__category--stats:hover:not(.toolbox__category--selected) {
+      background-image: linear-gradient(to right, #fff 25%, rgba(243, 243, 243, 0.2) 100%); }
+    .toolbox__row .toolbox__category--stats.toolbox__category--selected {
+      background-color: rgba(243, 243, 243, 0.1);
       transition: background-color 0.25s ease; }
     .toolbox__row .toolbox__category--utility:hover:not(.toolbox__category--selected) {
-      background-image: linear-gradient(to right, #fff 25%, rgba(142, 37, 170, 0.2) 100%); }
+      background-image: linear-gradient(to right, #fff 25%, rgba(243, 243, 243, 0.2) 100%); }
     .toolbox__row .toolbox__category--utility.toolbox__category--selected {
-      background-color: rgba(142, 37, 170, 0.1);
+      background-color: rgba(243, 243, 243, 0.1);
       transition: background-color 0.25s ease; }
     .toolbox__row .toolbox__category--math:hover:not(.toolbox__category--selected) {
-      background-image: linear-gradient(to right, #fff 25%, rgba(252, 139, 1, 0.2) 100%); }
+      background-image: linear-gradient(to right, #fff 25%, rgba(243, 243, 243, 0.2) 100%); }
     .toolbox__row .toolbox__category--math.toolbox__category--selected {
-      background-color: rgba(252, 139, 1, 0.1);
+      background-color: rgba(243, 243, 243, 0.1);
       transition: background-color 0.25s ease; }
     .toolbox__row .toolbox__category--text:hover:not(.toolbox__category--selected) {
-      background-image: linear-gradient(to right, #fff 25%, rgba(93, 64, 55, 0.2) 100%); }
+      background-image: linear-gradient(to right, #fff 25%, rgba(243, 243, 243, 0.2) 100%); }
     .toolbox__row .toolbox__category--text.toolbox__category--selected {
-      background-color: rgba(93, 64, 55, 0.1);
+      background-color: rgba(243, 243, 243, 0.1);
       transition: background-color 0.25s ease; }
     .toolbox__row .toolbox__category--logic:hover:not(.toolbox__category--selected) {
-      background-image: linear-gradient(to right, #fff 25%, rgba(24, 118, 210, 0.2) 100%); }
+      background-image: linear-gradient(to right, #fff 25%, rgba(243, 243, 243, 0.2) 100%); }
     .toolbox__row .toolbox__category--logic.toolbox__category--selected {
-      background-color: rgba(24, 118, 210, 0.1);
+      background-color: rgba(243, 243, 243, 0.1);
       transition: background-color 0.25s ease; }
     .toolbox__row .toolbox__category--lists:hover:not(.toolbox__category--selected) {
-      background-image: linear-gradient(to right, #fff 25%, rgba(229, 56, 54, 0.2) 100%); }
+      background-image: linear-gradient(to right, #fff 25%, rgba(243, 243, 243, 0.2) 100%); }
     .toolbox__row .toolbox__category--lists.toolbox__category--selected {
-      background-color: rgba(229, 56, 54, 0.1);
+      background-color: rgba(243, 243, 243, 0.1);
       transition: background-color 0.25s ease; }
     .toolbox__row .toolbox__category--custom_functions:hover:not(.toolbox__category--selected) {
-      background-image: linear-gradient(to right, #fff 25%, rgba(0, 172, 193, 0.2) 100%); }
+      background-image: linear-gradient(to right, #fff 25%, rgba(243, 243, 243, 0.2) 100%); }
     .toolbox__row .toolbox__category--custom_functions.toolbox__category--selected {
-      background-color: rgba(0, 172, 193, 0.1);
+      background-color: rgba(243, 243, 243, 0.1);
       transition: background-color 0.25s ease; }
     .toolbox__row .toolbox__category--variables:hover:not(.toolbox__category--selected) {
-      background-image: linear-gradient(to right, #fff 25%, rgba(97, 97, 97, 0.2) 100%); }
+      background-image: linear-gradient(to right, #fff 25%, rgba(243, 243, 243, 0.2) 100%); }
     .toolbox__row .toolbox__category--variables.toolbox__category--selected {
-      background-color: rgba(97, 97, 97, 0.1);
+      background-color: rgba(243, 243, 243, 0.1);
       transition: background-color 0.25s ease; }
     .toolbox__row .toolbox__category--loops:hover:not(.toolbox__category--selected) {
-      background-image: linear-gradient(to right, #fff 25%, rgba(175, 180, 43, 0.2) 100%); }
+      background-image: linear-gradient(to right, #fff 25%, rgba(243, 243, 243, 0.2) 100%); }
     .toolbox__row .toolbox__category--loops.toolbox__category--selected {
-      background-color: rgba(175, 180, 43, 0.1);
+      background-color: rgba(243, 243, 243, 0.1);
+      transition: background-color 0.25s ease; }
+    .toolbox__row .toolbox__category--time:hover:not(.toolbox__category--selected) {
+      background-image: linear-gradient(to right, #fff 25%, rgba(243, 243, 243, 0.2) 100%); }
+    .toolbox__row .toolbox__category--time.toolbox__category--selected {
+      background-color: rgba(243, 243, 243, 0.1);
+      transition: background-color 0.25s ease; }
+    .toolbox__row .toolbox__category--misc:hover:not(.toolbox__category--selected) {
+      background-image: linear-gradient(to right, #fff 25%, rgba(243, 243, 243, 0.2) 100%); }
+    .toolbox__row .toolbox__category--misc.toolbox__category--selected {
+      background-color: rgba(243, 243, 243, 0.1);
+      transition: background-color 0.25s ease; }
+    .toolbox__row .toolbox__category--notifications:hover:not(.toolbox__category--selected) {
+      background-image: linear-gradient(to right, #fff 25%, rgba(243, 243, 243, 0.2) 100%); }
+    .toolbox__row .toolbox__category--notifications.toolbox__category--selected {
+      background-color: rgba(243, 243, 243, 0.1);
       transition: background-color 0.25s ease; }
   .toolbox__separator {
-    padding: 20px 0;
+    padding: 10px 0;
     border-top: 1px solid #ebebeb; }
   .toolbox #search_input {
     padding: 10px;
