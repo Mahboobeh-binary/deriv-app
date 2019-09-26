@@ -823,7 +823,6 @@
   text-transform: capitalize;
   text-align: left;
   line-height: 1.75;
-  background-color: var(--general-section-1);
   color: var(--text-prominent);
   line-height: 24px;
   padding: 16px; }
@@ -1269,8 +1268,16 @@ html {
     color: var(--text-prominent); }
 
 /** @define dc-modal-header; */
+.dc-modal-header--modal-settings {
+  border-bottom: 0; }
+
 .dc-modal-header__title--modal-settings {
-  min-width: 28%; }
+  min-width: 28%;
+  background-color: var(--general-section-1); }
+
+/** @define dc-modal; */
+.dc-modal__container_modal-settings {
+  width: 736px; }
 
 /*------------------------------------*
  *  # Constants

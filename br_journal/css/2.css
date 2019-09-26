@@ -392,6 +392,22 @@
 .secondary.dc-dropdown__select-arrow .color1-stroke {
   stroke: var(--text-less-prominent); }
 
+.dc-dropdown__label {
+  position: absolute;
+  font-size: 1.4rem;
+  font-size: var(--text-size-xs);
+  transform: translate(0.5rem, -1rem) scale(0.75);
+  z-index: 2;
+  color: var(--text-less-prominent);
+  padding: 0 4px;
+  background-color: var(--fill-normal);
+  pointer-events: none;
+  transition: 0.25s ease all; }
+
+.dc-dropdown__label--clicked {
+  color: #85acb0;
+  color: var(--brand-secondary); }
+
 .dc-dropdown__display {
   cursor: pointer;
   border-radius: 4px;
@@ -412,6 +428,7 @@
 
 .dc-dropdown__display-text {
   padding-left: 1em;
+  padding-right: 2.5em;
   font-size: 1.4em;
   color: rgba(0, 0, 0, 0.8);
   font-weight: 400;
@@ -437,7 +454,7 @@
   justify-content: flex-start; }
 
 .dc-dropdown__display--is-left-text .dc-dropdown__display-text {
-  padding-left: 1em; }
+  padding-left: 1.2rem; }
 
 .dc-dropdown__display--has-symbol {
   justify-content: unset; }
@@ -718,7 +735,6 @@
   max-height: 200px;
   overflow-y: auto;
   z-index: 2;
-  cursor: pointer;
   border-radius: 4px;
   box-shadow: 0 2px 8px 0 var(--shadow-menu);
   background: var(--state-normal); }
@@ -734,18 +750,19 @@
   text-align: center; }
 
 .dc-list__label {
-  font-size: 1.4em;
-  color: rgba(0, 0, 0, 0.8);
-  font-weight: 700;
-  text-transform: capitalize;
-  text-align: center;
-  line-height: 1.5;
-  padding: 6.25px;
-  color: var(--text-prominent);
-  display: block; }
+  padding: 0.6rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ff444f;
+  color: var(--brand-red-coral);
+  height: 3.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
 .dc-list__item {
-  width: 100%; }
+  width: 100%;
+  cursor: pointer; }
 
 .dc-list__item-text, .dc-list__item-symbol {
   font-size: 1.4em;
@@ -760,7 +777,7 @@
   justify-content: center;
   pointer-events: none;
   vertical-align: middle;
-  padding: 6.25px 0;
+  padding: 0.6rem 0;
   padding-left: 1.6em; }
 
 .dc-list__item-text--left {
@@ -798,12 +815,18 @@
   text-align: left;
   line-height: 1.5;
   width: 100%;
-  padding: 6.25px 0;
+  padding: 0.6rem 0;
   margin: 0;
   text-align: center;
   justify-content: center;
   display: flex;
   color: var(--text-general); }
+
+.dc-list__separator {
+  display: flex;
+  width: calc(100% - 3.2rem);
+  border-bottom: 1px solid var(--general-section-2);
+  margin: 1.6rem; }
 
 @media not all and (min-resolution: 0.001dpcm) {
   @supports (-webkit-appearance: none) {

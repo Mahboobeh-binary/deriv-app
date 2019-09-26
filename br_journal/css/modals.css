@@ -919,7 +919,7 @@ html {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   box-shadow: 0 2px 8px 0 var(--shadow-menu);
   background-color: var(--general-main-2); }
 
@@ -943,6 +943,9 @@ html {
   margin-bottom: 22.85714px;
   color: var(--text-general);
   max-width: 448px; }
+
+.dc-dialog__content .dc-input__label {
+  background-color: var(--general-main-2); }
 
 .dc-dialog__footer {
   display: flex;
