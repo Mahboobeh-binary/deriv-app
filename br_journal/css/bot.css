@@ -3473,6 +3473,10 @@
     line-height: 40px;
     width: 100%;
     border-bottom: 1px solid var(--general-section-1); }
+  .journal__table--body:before {
+    content: '';
+    display: block;
+    height: 40px; }
   .journal__table--th {
     background-color: var(--general-main-1);
     text-align: left;
