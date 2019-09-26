@@ -3736,7 +3736,8 @@
 * @define -panel
 **/
 .run-panel__footer {
-  text-align: center; }
+  text-align: center;
+  height: 60px; }
 
 .run-panel__button {
   margin-left: 0 !important;
