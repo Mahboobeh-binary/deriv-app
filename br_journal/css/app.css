@@ -1816,7 +1816,7 @@ html {
 
 .btn {
   font-size: 1rem;
-  display: inline-flex;
+  display: inline-block;
   vertical-align: middle;
   justify-content: center;
   touch-action: manipulation;
@@ -1840,7 +1840,9 @@ html {
   text-transform: unset;
   text-align: center;
   line-height: 1.5;
-  color: var(--text-general); }
+  color: var(--text-general);
+  display: inline-block;
+  vertical-align: middle; }
 
 .btn--link {
   max-width: 220px;
@@ -1851,7 +1853,8 @@ html {
   text-decoration: none; }
 
 .btn__icon {
-  display: inline-flex;
+  display: inline-block;
+  vertical-align: middle;
   padding-right: 6px;
   margin-top: 2px; }
 
