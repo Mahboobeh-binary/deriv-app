@@ -3693,12 +3693,15 @@
     padding: 26px; }
   .dc-modal__container_modal--saveload .modal__footer {
     text-align: right; }
+    .dc-modal__container_modal--saveload .modal__footer--cancel {
+      margin-right: 0; }
   .dc-modal__container_modal--saveload .modal__content-row {
     padding: 21px 21px 35px; }
 
 .radio-group__saveload-type {
   display: flex;
-  justify-content: space-around; }
+  justify-content: center;
+  margin-top: 0; }
   .radio-group__saveload-type .dc-radio-group__item {
     display: flex;
     flex-direction: column;
