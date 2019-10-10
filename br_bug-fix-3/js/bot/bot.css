@@ -5715,9 +5715,9 @@
     text-align: left;
     padding-left: 16px; }
     .journal__table--th:nth-child(1) {
-      width: 25%; }
+      width: 30%; }
     .journal__table--th:nth-child(2) {
-      width: 75%; }
+      width: 70%; }
   .journal__table--tr:nth-child(odd) {
     background: var(--general-main-1); }
   .journal__table--tr:nth-child(even) {
@@ -5730,9 +5730,9 @@
     line-height: 16px;
     word-break: break-word; }
     .journal__table--td:nth-child(1) {
-      width: 25%; }
+      width: 30%; }
     .journal__table--td:nth-child(2) {
-      width: 75%; }
+      width: 70%; }
   .journal__table--date, .journal__table--time {
     line-height: 1.4em; }
   .journal__table--bold {
@@ -7553,6 +7553,9 @@
     .run-panel__button--disable {
       pointer-events: none;
       opacity: 0.5; }
+    .run-panel__button--icon {
+      display: inline-block;
+      vertical-align: middle; }
   .run-panel__icon-info {
     vertical-align: middle; }
   .run-panel__info {
