@@ -1778,8 +1778,8 @@
   border-radius: 4px;
   display: flex;
   flex-direction: row;
-  background: var(--status-default);
-  color: #0e0e0e; }
+  background: var(--general-active);
+  color: var(--text-prominent); }
 
 .dc-popover__bubble__icon {
   flex-grow: 1;
@@ -1806,25 +1806,25 @@
   left: 100%;
   top: 50%;
   margin-top: -5px;
-  border-left-color: var(--status-default); }
+  border-left-color: var(--general-active); }
 
 .dc-popover__bubble[data-popover-pos=right] .dc-popover__bubble__arrow {
   right: 100%;
   top: 50%;
   margin-top: -5px;
-  border-right-color: var(--status-default); }
+  border-right-color: var(--general-active); }
 
 .dc-popover__bubble[data-popover-pos=top] .dc-popover__bubble__arrow {
   left: 50%;
   top: 100%;
   margin-left: -5px;
-  border-top-color: var(--status-default); }
+  border-top-color: var(--general-active); }
 
 .dc-popover__bubble[data-popover-pos=bottom] .dc-popover__bubble__arrow {
   left: 50%;
   bottom: 100%;
   margin-left: -5px;
-  border-bottom-color: var(--status-default); }
+  border-bottom-color: var(--general-active); }
 
 .dc-popover__bubble--error {
   background-color: var(--status-danger); }
@@ -2188,13 +2188,17 @@
   stroke: var(--text-prominent); }
 
 .dc-modal__container {
+  display: flex;
+  flex-direction: column;
   min-width: 400px;
   position: relative;
   overflow: hidden;
   border-radius: 4px;
   transition: transform 0.25s cubic-bezier(0.25, 0.1, 0.1, 0.25), opacity 0.25s cubic-bezier(0.25, 0.1, 0.1, 0.25);
   background-color: var(--general-main-2);
-  box-shadow: 0 4px 6px 0 var(--shadow-menu); }
+  box-shadow: 0 4px 6px 0 var(--shadow-menu);
+  max-height: calc(100vh - 48px - 36px);
+  max-width: 90vw; }
 
 .dc-modal__container--hide {
   display: none; }
@@ -3731,7 +3735,7 @@
   line-height: 1.43;
   letter-spacing: normal;
   color: var(--text-prominent);
-  margin-left: 20px; }
+  margin: 8px 0 0 20px; }
 
 .saveload-type__container {
   text-align: center; }
@@ -3746,11 +3750,14 @@
   line-height: 1.43;
   letter-spacing: normal;
   color: var(--text-prominent); }
+  .saveload-type__radio-text--disabled {
+    color: var(--text-disabled); }
 
 .saveload-type__drive-status {
   cursor: pointer;
   position: absolute;
   margin-top: 20px;
+  font-weight: bold;
   color: var(--brand-red-coral);
   width: 80px; }
 
