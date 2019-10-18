@@ -11,11 +11,8 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("/br_shared-cleanup-trader/workbox-v4.3.1/workbox-sw.js");
-workbox.setConfig({modulePathPrefix: "/br_shared-cleanup-trader/workbox-v4.3.1"});
-
 importScripts(
-  "/br_shared-cleanup-trader/precache-manifest.1759ce4377414f52fbdbfb7691729769.js"
+  "/br_shared-cleanup-trader/precache-manifest.a6844c782da32c0fb62c15fa52d7c276.js"
 );
 
 workbox.core.skipWaiting();
