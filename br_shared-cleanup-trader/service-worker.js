@@ -12,7 +12,7 @@
  */
 
 importScripts(
-  "/br_shared-cleanup-trader/precache-manifest.a6844c782da32c0fb62c15fa52d7c276.js"
+  "/br_shared-cleanup-trader/precache-manifest.462f02e2c0fc7c8cb0f5536b1dcf58f7.js"
 );
 
 workbox.core.skipWaiting();

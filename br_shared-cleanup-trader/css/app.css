@@ -11257,8 +11257,8 @@ table {
     --status-colored-background: #ffffff;
     --transparent-success: rgba(0, 167, 158, 0.92);
     /* TODO: change to styleguide later */
-    --gradient-success: linear-gradient(to top, #ffffff, rgba(0, 167, 158, 0.16));
-    --gradient-danger: linear-gradient(to top, #ffffff, rgba(255, 68, 79, 0.16)); }
+    --gradient-success: linear-gradient(to top, #0e0e0e, rgba(0, 167, 158, 0.16));
+    --gradient-danger: linear-gradient(to top, #0e0e0e, rgba(255, 68, 79, 0.16)); }
 
 @font-face {
   font-family: 'BinarySymbols';
