@@ -2,6 +2,12 @@
  *  # Constants
  *------------------------------------*/
 /* stylelint-disable color-no-hex */
+/* COLOR PALETTE */
+/* colors */
+/* alpha colors */
+/* gradient colors */
+/* Preserve legacy variables */
+/* Primary */
 /* stylelint-enable color-no-hex */
 /*------------------------------------*
  *  # SASS Mixins and Functions
@@ -59,29 +65,16 @@
    @include createBarspinnerAnimation(5, 1.2s, 0,1);
  */
 /*
- * Implementation of themes
- * generate sets of themes keys object property (dark / light)
- * @param $themes - themes property
- * Usage example:
-   @include themify($themes) { color: themed('background_color') }
- */
-/*
- * Generate typefaces key-value pair of themefy object
- * Should be inside themify mixins
- * Example:
-   @include themify($themes) { border-color: 1px solid themed('background_color') }
- */
-/*
  * Tooltip colors
  * @param $color - color property
  * Usage example:
    @include tooltipColor($COLOR_RED);
  */
 /*
- * Themified Tooltip colors
- * @param $color - color property
+ * Convert Tooltip colors
+ * @param $color - css color property
  * Usage example:
-   @include tooltipColor($COLOR_RED);
+   @include convertTooltipColor(var(--status-default));
  */
 /*
     Constants
@@ -94,46 +87,6 @@
     See $FONT_SIZES, $TEXT_ALIGN, $FONT_WEIGHTS, $COLORS maps above for references.
     Variables name example: --title-center-semibold-red
  */
-/*------------------------------------*
- *  # Reset SCSS
- *  - to make browsers render all elements more consistently
- *  - Reference:  https://github.com/AdamMarsden/simple-typography/blob/master/_reset.scss
- *------------------------------------*/
-/* stylelint-disable */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, input, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  display: block; }
-
-html {
-  height: 100%; }
-
-body {
-  line-height: 1;
-  height: 100%; }
-
-ol, ul {
-  list-style: none; }
-
-blockquote, q {
-  quotes: none; }
-
-blockquote:before, blockquote:after, q:before, q:after {
-  content: '';
-  content: none; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
-/* stylelint-enable */
 /*
     to use styles without modifier class on .inline-icon
     use @extend
@@ -158,8 +111,7 @@ html {
 
 /* postcss-bem-linter: ignore */
 *, html, .body {
-  font-family: roboto, sans-serif;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  font-family: "IBM Plex Sans", sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -173,41 +125,38 @@ html {
   font-size: inherit;
   font-style: inherit;
   padding: 2px 3px;
-  border: 1px solid rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--border-normal);
   border-radius: 4px; }
 
 /** @define input */
 .input {
   font-family: inherit;
   font-style: inherit;
-  padding: 2px 3px; }
-  .theme--light .input {
-    color: rgba(0, 0, 0, 0.8); }
-  .theme--dark .input {
-    color: #ffffff; }
+  padding: 2px 3px;
+  color: var(--text-general); }
 
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
-  color: rgba(0, 0, 0, 0.16); }
+  color: var(--text-general); }
 
 ::-moz-placeholder {
   /* Firefox 19+ */
-  color: rgba(0, 0, 0, 0.16); }
+  color: var(--text-general); }
 
 :-ms-input-placeholder {
   /* IE 10+ */
-  color: rgba(0, 0, 0, 0.16); }
+  color: var(--text-general); }
 
 :-moz-placeholder {
   /* Firefox 18- */
-  color: rgba(0, 0, 0, 0.16); }
+  color: var(--text-general); }
 
 /** @define theme */
 .theme--light {
-  background: #f4f4f6; }
+  background: #ffffff; }
 
 .theme--dark {
-  background: #0b0e18; }
+  background: #0e0e0e; }
 
 /** @define container */
 .container {
@@ -230,11 +179,12 @@ html {
 
 /** @define link */
 .link {
-  color: #ff9933;
+  color: var(--brand-red-coral);
   font-weight: bold;
   text-decoration: none; }
   .link:hover {
-    text-decoration: underline; }
+    text-decoration: underline;
+    cursor: pointer; }
   .link--white {
     color: #ffffff; }
 
@@ -253,15 +203,12 @@ html {
 
 /** @define hr */
 .hr {
+  border-top: var(--general-section-1);
   display: block;
   height: 1px;
   border: 0;
   margin: 0.5em 0;
   padding: 0; }
-  .theme--light .hr {
-    border-top: 1px solid rgba(0, 0, 0, 0.04); }
-  .theme--dark .hr {
-    border-top: 1px solid #2a3052; }
 
 /** @define deriv-app */
 .deriv-app {
@@ -270,7 +217,7 @@ html {
 
 /** @define mobile-widget */
 .mobile-widget {
-  border: 1px solid rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--border-normal);
   border-radius: 4px;
   padding: 1em 0.5em;
   display: grid;
@@ -280,7 +227,7 @@ html {
   font-size: 0.7em; }
   .mobile-widget:hover, .mobile-widget:focus, .mobile-widget:active {
     cursor: pointer;
-    border: solid 1px #2a3052; }
+    border: solid 1px var(--border-active); }
 
 /** @define fieldset-minimized */
 .fieldset-minimized {
@@ -302,5 +249,5 @@ html {
     font-size: 1em; }
   .fieldset-minimized__basis {
     font-weight: bold;
-    color: #2a3052; }
+    color: var(--text-prominent); }
 
