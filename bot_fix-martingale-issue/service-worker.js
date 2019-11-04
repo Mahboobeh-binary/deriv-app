@@ -15,7 +15,7 @@ importScripts("/bot_fix-martingale-issue/workbox-v4.3.1/workbox-sw.js");
 workbox.setConfig({modulePathPrefix: "/bot_fix-martingale-issue/workbox-v4.3.1"});
 
 importScripts(
-  "/bot_fix-martingale-issue/precache-manifest.ccacaf6e632815c0bc75fd9b10706816.js"
+  "/bot_fix-martingale-issue/precache-manifest.4bb1bb5a0e0f8f8bed26053afb0e49b5.js"
 );
 
 workbox.core.skipWaiting();
