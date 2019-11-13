@@ -15,7 +15,7 @@ importScripts("/bot_add-firestore/workbox-v4.3.1/workbox-sw.js");
 workbox.setConfig({modulePathPrefix: "/bot_add-firestore/workbox-v4.3.1"});
 
 importScripts(
-  "/bot_add-firestore/precache-manifest.c449e01666d194c0c8a0b2c71948a40b.js"
+  "/bot_add-firestore/precache-manifest.a7dd3b062c22f3449ffe872236da04e8.js"
 );
 
 workbox.core.skipWaiting();
