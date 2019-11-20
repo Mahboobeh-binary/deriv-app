@@ -1356,8 +1356,24 @@ html {
       text-align: center;
       color: var(--text-less-prominent); }
   .notifications-item {
-    padding: 8px;
-    margin-left: 32px; }
+    padding: 0.8rem;
+    margin-left: 3.2rem;
+    margin-right: 0.8rem;
+    position: relative; }
+    .notifications-item:after {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      left: -3.2rem;
+      width: calc(100% + 4rem);
+      height: 1px;
+      background: var(--border-disabled); }
+    .notifications-item__cta-button {
+      margin: 8px 0 0 auto;
+      height: 24px !important;
+      width: 106px; }
+      .notifications-item__cta-button .btn__text {
+        font-size: 1.2rem; }
     .notifications-item__title {
       font-size: 1.4rem;
       font-weight: bold;
@@ -1961,6 +1977,22 @@ html {
   height: 100%;
   justify-content: center;
   padding: 0 1.6em 0 1.7em; }
+  .acc-info__preloader {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 46px;
+    z-index: 2;
+    background: var(--general-main-1); }
+    .acc-info__preloader:before {
+      content: '';
+      position: absolute;
+      left: -90px;
+      width: 90px;
+      height: 46px;
+      top: 0;
+      background: var(--general-main-1); }
   .acc-info__container {
     align-items: center;
     -webkit-box-align: center;
@@ -7485,6 +7517,7 @@ table {
     opacity: 0;
     pointer-events: none;
     top: -1px;
+    z-index: 2;
     left: 0;
     width: 100%;
     height: calc(100% + 2px);
@@ -7520,7 +7553,8 @@ table {
     justify-content: flex-end;
     order: 1;
     display: inline-flex;
-    height: 47px; }
+    height: 47px;
+    position: relative; }
   .header__menu-toggle {
     align-self: center;
     display: flex; }
