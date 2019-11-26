@@ -486,7 +486,7 @@
   font-size: 1.6rem;
   color: var(--text-general);
   font-weight: 700;
-  text-transform: none;
+  text-transform: capitalize;
   text-align: left;
   line-height: 1.75;
   color: var(--text-prominent);
@@ -3186,7 +3186,7 @@ html {
   font-size: 1.4rem;
   color: var(--text-general);
   font-weight: 400;
-  text-transform: none;
+  text-transform: capitalize;
   text-align: center;
   line-height: 1.5;
   color: var(--text-prominent);
@@ -3438,7 +3438,7 @@ html {
   font-size: 1.4rem;
   color: var(--text-general);
   font-weight: 400;
-  text-transform: none;
+  text-transform: capitalize;
   text-align: left;
   line-height: 1.5;
   line-height: 1.43;
@@ -3465,7 +3465,7 @@ html {
   font-size: 1.4rem;
   color: var(--text-colored-background);
   font-weight: 700;
-  text-transform: none;
+  text-transform: capitalize;
   text-align: left;
   line-height: 1.5;
   line-height: 1.43;
@@ -3485,7 +3485,7 @@ html {
   font-size: 1.4rem;
   color: var(--text-general);
   font-weight: 400;
-  text-transform: none;
+  text-transform: capitalize;
   text-align: left;
   line-height: 1.5;
   width: 100%;
