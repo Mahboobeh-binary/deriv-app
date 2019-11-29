@@ -1,5 +1,5 @@
 import { localize }    from 'deriv-translations';
-import { expectValue } from '../../../shared';
+import { expectValue } from 'scratch/shared';
 
 Blockly.Blocks.sma_statement = {
     protected_statements : ['STATEMENT'],

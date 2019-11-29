@@ -3,9 +3,9 @@ import { Money }     from 'deriv-components';
 import PropTypes     from 'prop-types';
 import React         from 'react';
 import { localize }  from 'deriv-translations';
-import ContractCard  from './contract-card.jsx';
-import { connect }   from '../stores/connect';
-import                    '../assets/sass/summary.scss';
+import { connect }   from 'stores/connect';
+import ContractCard  from 'components/contract-card.jsx';
+import                    'assets/sass/summary.scss';
 
 const SummaryTile = (props) => (
     <div className={'summary__tile'}>

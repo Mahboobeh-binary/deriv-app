@@ -1,7 +1,7 @@
 import { localize }   from 'deriv-translations';
-import { notify }     from './broadcast';
-import config         from '../../../constants';
-import { getUTCTime } from '../../../utils/tools';
+import { notify }     from 'tradeEngine/utils/broadcast';
+import config         from 'constants';
+import { getUTCTime } from 'utils/tools';
 
 export const noop = () => {};
 

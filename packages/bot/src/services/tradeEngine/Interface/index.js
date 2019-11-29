@@ -1,8 +1,8 @@
-import TicksInterface                   from './TicksInterface';
-import ToolsInterface                   from './ToolsInterface';
-import TradeEngine                      from '../trade';
-import { noop, createDetails }          from '../utils/helpers';
-import { observer as globalObserver }   from '../../../utils/observer';
+import { observer as globalObserver } from 'utils/observer';
+import { noop, createDetails }        from 'tradeEngine/utils/helpers';
+import TicksInterface                 from 'tradeEngine/Interface/TicksInterface';
+import ToolsInterface                 from 'tradeEngine/Interface/ToolsInterface';
+import TradeEngine                    from 'tradeEngine/trade';
 
 /**
  * Bot - Bot Module

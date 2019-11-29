@@ -1,8 +1,8 @@
 import classNames    from 'classnames';
 import React         from 'react';
 import { PropTypes } from 'prop-types';
-import { connect }   from '../stores/connect';
-import                    '../assets/sass/notification-messages.scss';
+import { connect }   from 'stores/connect';
+import                    'assets/sass/notification-messages.scss';
 
 const NotificationMessages = ({
     is_drawer_open,

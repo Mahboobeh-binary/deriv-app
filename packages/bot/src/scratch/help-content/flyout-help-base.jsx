@@ -2,14 +2,14 @@ import { Button }       from 'deriv-components';
 import React            from 'react';
 import PropTypes        from 'prop-types';
 import { localize }     from 'deriv-translations';
-import FlyoutVideo      from './help-components/flyout-video.jsx';
-import FlyoutText       from './help-components/flyout-text.jsx';
-import FlyoutImage      from './help-components/flyout-img.jsx';
-import { config }       from './help-content.config';
-import FlyoutBlock      from '../../components/flyout-block.jsx';
-import constant         from '../../constants';
-import { Arrow2Icon }   from '../../components/Icons.jsx';
-import { connect }      from '../../stores/connect';
+import FlyoutBlock      from 'components/flyout-block.jsx';
+import { Arrow2Icon }   from 'components/Icons.jsx';
+import constant         from 'constants';
+import { connect }      from 'stores/connect';
+import FlyoutVideo      from 'scratch/help-content/help-components/flyout-video.jsx';
+import FlyoutText       from 'scratch/help-content/help-components/flyout-text.jsx';
+import FlyoutImage      from 'scratch/help-content/help-components/flyout-img.jsx';
+import { config }       from 'scratch/help-content/help-content.config';
 
 const HelpBase = ({
     block_node,

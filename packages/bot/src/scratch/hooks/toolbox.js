@@ -1,8 +1,8 @@
 import React                from 'react';
 import ReactDOM             from 'react-dom';
 import { localize }         from 'deriv-translations';
-import ScratchStore         from '../../stores/scratch-store';
-import { Arrow1Icon }       from '../../components/Icons.jsx';
+import { Arrow1Icon }       from 'components/Icons.jsx';
+import ScratchStore         from 'stores/scratch-store';
 
 /**
  * Width of the toolbox, which changes only in vertical layout.

@@ -1,5 +1,5 @@
-import Bot               from './app.jsx';
-import { preloadSprite } from './components/Icons.jsx';
+import Bot               from 'app/app.jsx';
+import { preloadSprite } from 'components/Icons.jsx';
 
 preloadSprite();
 

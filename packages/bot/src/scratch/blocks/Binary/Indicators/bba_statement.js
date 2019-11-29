@@ -1,6 +1,6 @@
 import { localize }    from 'deriv-translations';
-import { expectValue } from '../../../shared';
-import config          from '../../../../constants';
+import config          from 'constants';
+import { expectValue } from 'scratch/shared';
 
 Blockly.Blocks.bba_statement = {
     protected_statements : ['STATEMENT'],

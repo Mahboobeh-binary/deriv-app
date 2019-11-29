@@ -1,4 +1,4 @@
-import config from '../../constants';
+import config from 'constants';
 
 Blockly.Block.prototype.getDisplayName = function() {
     if (this.meta) {

@@ -1,4 +1,4 @@
-import config from '../../constants';
+import config from 'constants';
 
 /**
  * Handle a mouse-down on SVG drawing surface.

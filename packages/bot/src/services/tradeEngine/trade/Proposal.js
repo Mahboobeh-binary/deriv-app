@@ -1,6 +1,6 @@
 import { localize }                                    from 'deriv-translations';
-import { proposalsReady, clearProposals }              from './state/actions';
-import { tradeOptionToProposal, doUntilDone, getUUID } from '../utils/helpers';
+import { tradeOptionToProposal, doUntilDone, getUUID } from 'tradeEngine/utils/helpers';
+import { proposalsReady, clearProposals }              from 'tradeEngine/trade/state/actions';
 
 export default Engine =>
     class Proposal extends Engine {

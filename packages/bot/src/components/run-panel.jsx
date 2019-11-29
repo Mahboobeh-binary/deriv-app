@@ -5,14 +5,14 @@ import { Button,
 import PropTypes                              from 'prop-types';
 import React                                  from 'react';
 import { localize }                           from 'deriv-translations';
-import Dialog                                 from './dialog.jsx';
-import { InfoOutlineIcon, RunIcon, StopIcon } from './Icons.jsx';
-import Journal                                from './journal.jsx';
-import Summary                                from './summary.jsx';
-import TradeAnimation                         from './trade-animation.jsx';
-import Transactions                           from './transactions.jsx';
-import { connect }                            from '../stores/connect';
-import '../assets/sass/run-panel.scss';
+import { connect }                            from 'stores/connect';
+import Dialog                                 from 'components/dialog.jsx';
+import { InfoOutlineIcon, RunIcon, StopIcon } from 'components/Icons.jsx';
+import Journal                                from 'components/journal.jsx';
+import Summary                                from 'components/summary.jsx';
+import TradeAnimation                         from 'components/trade-animation.jsx';
+import Transactions                           from 'components/transactions.jsx';
+import                                             'assets/sass/run-panel.scss';
 
 const drawerContent = ({
     active_index,

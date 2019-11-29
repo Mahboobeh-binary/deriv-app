@@ -2,9 +2,9 @@ import {
     observable,
     action,
     computed }                from 'mobx';
-import { contract_stages }    from '../constants/contract-stage';
+import { contract_stages }    from 'constants/contract-stage';
 import { isEnded ,
-    getIndicativePrice }      from '../utils/contract';
+    getIndicativePrice }      from 'utils/contract';
 
 export default class ContractCardStore {
     @observable contract            = null;

@@ -1,6 +1,6 @@
 import { localize }                   from 'deriv-translations';
-import { notify }                     from '../utils/broadcast';
-import { observer as globalObserver } from '../../../utils/observer';
+import { notify }                     from 'tradeEngine/utils/broadcast';
+import { observer as globalObserver } from 'utils/observer';
 
 export default Interface =>
     class extends Interface {

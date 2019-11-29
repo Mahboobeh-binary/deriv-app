@@ -1,8 +1,8 @@
 import { localize }                      from 'deriv-translations';
-import { purchaseSuccessful }            from './state/actions';
-import { BEFORE_PURCHASE }               from './state/constants';
-import { contractStatus, info, notify }  from '../utils/broadcast';
-import { recoverFromError, doUntilDone } from '../utils/helpers';
+import { BEFORE_PURCHASE }               from 'tradeEngine/trade/state/constants';
+import { contractStatus, info, notify }  from 'tradeEngine/utils/broadcast';
+import { recoverFromError, doUntilDone } from 'tradeEngine/utils/helpers';
+import { purchaseSuccessful }            from 'tradeEngine/trade/state/actions';
 
 let delayIndex = 0;
 

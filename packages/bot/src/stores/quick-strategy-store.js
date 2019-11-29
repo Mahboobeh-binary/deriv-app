@@ -5,9 +5,9 @@ import {
     runInAction,
 }                    from 'mobx';
 import { localize }  from 'deriv-translations';
-import config        from '../constants/index';
-import { load }      from '../scratch/utils';
-import ApiHelpers     from '../services/api/api-helpers';
+import config        from 'constants/index';
+import { load }      from 'scratch/utils';
+import ApiHelpers    from 'api/api-helpers';
 
 export default class QuickStrategyStore {
     constructor(root_store) {

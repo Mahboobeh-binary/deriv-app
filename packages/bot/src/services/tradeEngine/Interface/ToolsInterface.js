@@ -1,6 +1,6 @@
-import CandleInterface     from './CandleInterface';
-import IndicatorsInterface from './IndicatorsInterface';
-import MiscInterface       from './MiscInterface';
+import CandleInterface     from 'tradeEngine/Interface/CandleInterface';
+import IndicatorsInterface from 'tradeEngine/Interface/IndicatorsInterface';
+import MiscInterface       from 'tradeEngine/Interface/MiscInterface';
 
 // prettier-ignore
 export default Interface => class extends IndicatorsInterface(

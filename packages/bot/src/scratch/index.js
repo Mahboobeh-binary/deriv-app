@@ -1,9 +1,9 @@
-import                                    './blocks';
-import                                    './hooks';
-import Interpreter                    from '../services/tradeEngine/utils/interpreter';
-import ScratchStore                   from '../stores/scratch-store';
-import { observer as globalObserver } from '../utils/observer';
-import config                         from '../constants';
+import                                     'scratch/blocks';
+import                                     'scratch/hooks';
+import Interpreter                    from 'services/tradeEngine/utils/interpreter';
+import ScratchStore                   from 'stores/scratch-store';
+import config                         from 'constants';
+import { observer as globalObserver } from 'utils/observer';
 
 export const scratchWorkspaceInit = async () => {
     try {

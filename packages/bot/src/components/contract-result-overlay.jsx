@@ -4,8 +4,8 @@ import React         from 'react';
 import { localize }  from 'deriv-translations';
 import {
     CheckIcon,
-    CrossIcon }      from './Icons.jsx';
-import                    '../assets/sass/contract-result-overlay.scss';
+    CrossIcon }      from 'components/Icons.jsx';
+import                    'assets/sass/contract-result-overlay.scss';
 
 const ContractResultOverlay = (props) => {
     const has_won_contract = props.profit >= 0;

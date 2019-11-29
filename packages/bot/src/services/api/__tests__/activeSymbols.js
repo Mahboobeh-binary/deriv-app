@@ -1,8 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { expect }                  from 'chai';
 import deep                        from 'deep-diff';
-import { generateLiveApiInstance } from '../appId';
-import ActiveSymbols               from '../symbolApi/activeSymbols';
+import { generateLiveApiInstance } from 'services/api/appId';
+import ActiveSymbols               from 'services/api/symbolApi/activeSymbols';
 
 /*
  There is a market called forex, which has a submarket

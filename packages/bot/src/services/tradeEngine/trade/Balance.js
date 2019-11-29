@@ -1,5 +1,5 @@
-import { info }         from '../utils/broadcast';
-import { roundBalance } from '../utils/helpers';
+import { info }         from 'tradeEngine/utils/broadcast';
+import { roundBalance } from 'tradeEngine/utils/helpers';
 
 let balanceStr = '';
 

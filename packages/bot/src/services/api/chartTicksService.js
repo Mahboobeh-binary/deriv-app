@@ -1,5 +1,5 @@
-import TicksService    from './ticksService';
-import { doUntilDone } from '../../utils/tools';
+import TicksService    from 'api/ticksService';
+import { doUntilDone } from 'utils/tools';
 
 export default class ChartTicksService extends TicksService {
     observe() {

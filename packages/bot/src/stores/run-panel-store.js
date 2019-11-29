@@ -5,19 +5,19 @@ import {
     computed,
 }                               from 'mobx';
 import { localize }             from 'deriv-translations';
-import { contract_stages }      from '../constants/contract-stage';
+import { hasAllRequiredBlocks } from 'utils/scratchHelper';
+import { contract_stages }      from 'constants/contract-stage';
 import {
     error_types,
     unrecoverable_errors,
-}                               from '../constants/messages';
+}                               from 'constants/messages';
 import {
     runBot,
     stopBot,
     terminateBot,
-}                               from '../scratch';
-import { isEnded }              from '../utils/contract';
-import { observer }             from '../utils/observer';
-import { hasAllRequiredBlocks } from '../scratch/utils/scratchHelper';
+}                               from 'scratch';
+import { isEnded }              from 'utils/contract';
+import { observer }             from 'utils/observer';
 
 export default class RunPanelStore {
     constructor(root_store) {

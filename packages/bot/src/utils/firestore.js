@@ -1,7 +1,7 @@
 import firebase          from 'firebase';
 import                   'firebase/firestore';
 import { reaction }      from 'mobx';
-import { message_types } from '../constants/messages';
+import { message_types } from 'constants/messages';
 
 const firestore = (() => {
 

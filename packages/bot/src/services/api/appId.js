@@ -1,14 +1,17 @@
-import { LiveApi }                                      from 'binary-live-api';
-import { getLanguage }                                  from 'deriv-translations';
-import AppIds                                           from './appIdResolver';
-import GTM                                              from '../../utils/gtm';
+import { LiveApi }        from 'binary-live-api';
+import { getLanguage }    from 'deriv-translations';
+import GTM                from 'utils/gtm';
 import {
     addToken,
     removeToken,
     getTokenList,
     removeAllTokens,
-}                                                       from '../../utils/tokenHelper';
-import { parseQueryString, isProduction, getExtension } from '../../utils/urlHelper';
+}                         from 'utils/tokenHelper';
+import { parseQueryString,
+    isProduction,
+    getExtension,
+}                     from 'utils/urlHelper';
+import AppIds             from 'api/appIdResolver';
 
 export const AppConstants = Object.freeze({
     STORAGE_ACTIVE_TOKEN: 'activeToken',

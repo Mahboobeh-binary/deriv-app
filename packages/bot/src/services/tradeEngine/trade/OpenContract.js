@@ -1,11 +1,11 @@
-import { sell, openContractReceived } from './state/actions';
 import {
     contractStatus,
     contractSettled,
     contract as
     broadcastContract,
-}                                     from '../utils/broadcast';
-import { doUntilDone, roundBalance }  from '../utils/helpers';
+}                                     from 'tradeEngine/utils/broadcast';
+import { doUntilDone, roundBalance }  from 'tradeEngine/utils/helpers';
+import { sell, openContractReceived } from 'tradeEngine/trade/state/actions';
 
 const AFTER_FINISH_TIMEOUT = 5;
 

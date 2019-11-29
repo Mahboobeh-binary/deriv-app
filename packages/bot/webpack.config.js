@@ -9,6 +9,21 @@ const MergeIntoSingleFilePlugin = require('webpack-merge-and-include-globally');
 
 const is_release = process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging';
 
+console.log(path.resolve(__dirname));
+
+const aliases = {
+    app         : path.resolve(__dirname, 'src'),
+    api         : path.resolve(__dirname, 'src/services/api'),
+    assets      : path.resolve(__dirname, 'src/assets'),
+    components  : path.resolve(__dirname, 'src/components'),
+    constants   : path.resolve(__dirname, 'src/constants'),
+    scratch     : path.resolve(__dirname, 'src/scratch'),
+    services    : path.resolve(__dirname, 'src/services'),
+    stores      : path.resolve(__dirname, 'src/stores'),
+    tradeEngine : path.resolve(__dirname, 'src/services/tradeEngine'),
+    utils       : path.resolve(__dirname, 'src/utils'),
+};
+
 const output = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bot.main.js',
@@ -31,6 +46,10 @@ module.exports = {
     mode: is_release ? 'production' : 'development',
     devtool: is_release ? 'source-map' : 'cheap-module-eval-source-map',
     target: 'web',
+    resolve     : {
+        alias     : aliases,
+        extensions: ['.js', '.jsx', '.css']
+    },
     module: {
         rules: [
             {

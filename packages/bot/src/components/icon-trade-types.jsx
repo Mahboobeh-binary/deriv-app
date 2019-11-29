@@ -27,7 +27,7 @@ import {
     TradeTypeTickHigh,
     TradeTypeTickLow,
     TradeTypeUpOrDown,
-    TradeTypeUnknown } from './Icons.jsx';
+    TradeTypeUnknown } from 'components/Icons.jsx';
 
 const IconTradeType = ({ trade_type, className }) => {
     switch (trade_type.toLowerCase()) {

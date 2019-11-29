@@ -1,8 +1,8 @@
 import { localize }                   from 'deriv-translations';
-import { info, notify }               from '../utils/broadcast';
-import { roundBalance }               from '../utils/helpers';
-import createError                    from '../../../utils/error';
-import { observer as globalObserver } from '../../../utils/observer';
+import { info, notify }               from 'tradeEngine/utils/broadcast';
+import { roundBalance }               from 'tradeEngine/utils/helpers';
+import createError                    from 'utils/error';
+import { observer as globalObserver } from 'utils/observer';
 
 const skeleton = {
     totalProfit: 0,

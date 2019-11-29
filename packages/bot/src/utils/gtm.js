@@ -1,6 +1,6 @@
-import { getTokenList }     from './tokenHelper';
-import { getAppIdFallback } from '../services/api/appId';
-import AppIds             from '../services/api/appIdResolver';
+import { getTokenList }     from 'utils/tokenHelper';
+import { getAppIdFallback } from 'api/appId';
+import AppIds               from 'api/appIdResolver';
 
 const GTM = (() => {
     const isGtmApplicable = () => Object.values(AppIds).includes(`${getAppIdFallback()}`);

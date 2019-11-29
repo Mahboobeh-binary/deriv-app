@@ -1,10 +1,10 @@
-import classNames               from 'classnames';
-import React                    from 'react';
-import PropTypes                from 'prop-types';
-import { localize }             from 'deriv-translations';
-import ContractResultOverlay    from './contract-result-overlay.jsx';
-import { connect }              from '../stores/connect';
-import '../assets/sass/trade-animation.scss';
+import classNames            from 'classnames';
+import { localize }          from 'deriv-translations';
+import React                 from 'react';
+import PropTypes             from 'prop-types';
+import { connect }           from 'stores/connect';
+import ContractResultOverlay from 'components/contract-result-overlay.jsx';
+import                            'assets/sass/trade-animation.scss';
 
 const CircularWrapper = ({ className }) => (
     <div className={classNames(

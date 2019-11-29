@@ -1,5 +1,5 @@
-import ActiveSymbols                     from './activeSymbols';
-import { getTokenList, removeAllTokens } from '../../../utils/tokenHelper';
+import ActiveSymbols                     from 'api/symbolApi/activeSymbols';
+import { getTokenList, removeAllTokens } from 'utils/tokenHelper';
 
 const noop = () => {};
 

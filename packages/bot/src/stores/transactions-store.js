@@ -1,5 +1,5 @@
 import { action, observable } from 'mobx';
-import { isEnded }            from '../utils/contract';
+import { isEnded }            from 'utils/contract';
 
 export default class TransactionsStore {
 

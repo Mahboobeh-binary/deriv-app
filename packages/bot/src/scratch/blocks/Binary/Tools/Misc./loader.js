@@ -1,6 +1,6 @@
 import { localize }                   from 'deriv-translations';
-import { loadBlocksFromRemote }       from '../../../../utils';
-import { observer as globalObserver } from '../../../../../utils/observer';
+import { loadBlocksFromRemote }       from 'scratch/utils';
+import { observer as globalObserver } from 'utils/observer';
 
 Blockly.Blocks.loader = {
     init() {

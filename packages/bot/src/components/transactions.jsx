@@ -6,16 +6,16 @@ import {
 import { PropTypes }   from 'prop-types';
 import React           from 'react';
 import { localize }    from 'deriv-translations';
+import { connect }     from 'stores/connect';
 import {
     BuyPriceIcon,
     ExitSpotIcon,
     EntrySpotIcon,
     PendingIcon,
     RefrenceIdIcon,
-    CompletedIcon }    from './Icons.jsx';
-import IconTradeType   from './icon-trade-types.jsx';
-import { connect }     from '../stores/connect';
-import                      '../assets/sass/transactions.scss';
+    CompletedIcon }    from 'components/Icons.jsx';
+import IconTradeType   from 'components/icon-trade-types.jsx';
+import                      'assets/sass/transactions.scss';
 
 const Transaction = ({ contract }) => {
     return (

@@ -1,6 +1,6 @@
 import { localize } from 'deriv-translations';
-import config       from '../../../../constants';
-import ApiHelpers   from '../../../../services/api/api-helpers';
+import config       from 'constants';
+import ApiHelpers   from 'api/api-helpers';
 
 Blockly.Blocks.trade_definition_tradeoptions = {
     init() {

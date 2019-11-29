@@ -1,5 +1,5 @@
 import { localize } from 'deriv-translations';
-import ScratchStore from '../../stores/scratch-store';
+import ScratchStore from 'stores/scratch-store';
 
 /* eslint-disable func-names, no-underscore-dangle */
 

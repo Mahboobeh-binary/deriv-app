@@ -1,6 +1,6 @@
 import filesaver     from 'file-saver';
 import { localize }  from 'deriv-translations';
-import config        from '../constants';
+import config        from 'constants';
 
 export const saveAs = ({ data, filename, type }) => {
     const blob = new Blob([data], { type });
