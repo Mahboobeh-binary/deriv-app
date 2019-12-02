@@ -4,6 +4,18 @@
   "description": "Visual automation for deriv.app",
   "main": "dist/bot.main.js",
   "jest": {
+    "moduleNameMapper": {
+      "^app$"         : "<rootDir>/src",
+      "^api$"         : "<rootDir>/src/services/api",
+      "^assets$"      : "<rootDir>/src/assets",
+      "^components$"  : "<rootDir>/src/components",
+      "^constants$"   : "<rootDir>/src/constants",
+      "^scratch$"     : "<rootDir>/src/scratch",
+      "services"      : "<rootDir>/src/services",
+      "^stores$"      : "<rootDir>/src/stores",
+      "tradeEngine"   : "<rootDir>/src/services/tradeEngine",
+      "utils"         : "<rootDir>/src/utils"
+    },
     "setupFilesAfterEnv": [
       "<rootDir>/.jest"
     ],
