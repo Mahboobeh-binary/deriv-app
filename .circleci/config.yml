@@ -72,8 +72,8 @@ commands:
           name: Install and configure dependencies
           command: |
             sudo npm install -g gh-pages@2.0.1
-            git config user.email "ci-build@binary.com"
-            git config user.name "ci-build"
+            git config user.email "mahboub.meng@gmail.com"
+            git config user.name "mahboobeh-binary"
       - add_ssh_keys:
           fingerprints:
             - "d2:a0:15:89:0e:3f:5e:09:ac:12:ed:f1:4b:96:d8:10"
