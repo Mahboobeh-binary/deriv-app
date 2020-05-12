@@ -37,6 +37,8 @@ commands:
       - run:
           name: Install npm packages
           command: npm run bootstrap
+          no_output_timeout: 20m
+          timeout: 1200
       - run:
           name: "create cache key"
           command: echo $(find ./packages/ -name package-lock.json -type f -exec md5sum {} \; | md5sum | cut -d' ' -f1) >> CACHE_KEY1
