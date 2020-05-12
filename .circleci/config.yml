@@ -1,115 +1,17 @@
 version: 2.1
-commands:
-  git_checkout_from_cache:
-    description: "Git checkout and save cache"
-    steps:
-      - restore_cache:
-          name: Git restore cache
-          keys:
-            - source-v1-{{ .Branch }}-{{ .Revision }}
-            - source-v1-{{ .Branch }}-
-            - source-v1-
-      - run:
-          name: Fetch git tags
-          command: |
-            mkdir -p ~/.ssh
-            echo 'github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ== ' >> ~/.ssh/known_hosts
-            # Fetch tags if git cache is present
-            if [ -e /home/circleci/project/.git ]
-            then
-              git fetch origin --tags
-            fi
-      - checkout
-      - run:
-          name: Compress git objects
-          command: git gc
-      - save_cache:
-          name: Git save cache
-          key: source-v1-{{ .Branch }}-{{ .Revision }}
-          paths:
-            - ".git"
-  npm_install:
-    description: "Install npm modules"
-    steps:
-      - restore_cache:
-          keys:
-            - node-
-      - run:
-          name: Install npm packages
-          command: npm run bootstrap
-      - run:
-          name: "create cache key"
-          command: echo $(find ./packages/ -name package-lock.json -type f -exec md5sum {} \; | md5sum | cut -d' ' -f1) >> CACHE_KEY1
-      - save_cache:
-          key: node-{{ checksum "CACHE_KEY1" }}
-          paths:
-            - "node_modules"
-            - "packages/*/node_modules"
-  build:
-    description: "Build"
-    steps:
-      - run:
-          name: "build packages"
-          command: npm run build:local
-      - run:
-          name: "build core"
-          command: node_modules/lerna/cli.js exec --scope @deriv/core -- npm run build
-  deploy:
-    description: "Deploy to k8s cluster"
-    parameters:
-      target_branch:
-        type: string
-    steps:
-      - checkout
-      - attach_workspace:
-          at: www
-      - run:
-          name: Tag build
-          command: echo "<< parameters.target_branch >> $(date)" > www/version
-      - run:
-          name: Install and configure dependencies
-          command: |
-            sudo npm install -g gh-pages@2.0.1
-            git config user.email "ci-build@binary.com"
-            git config user.name "ci-build"
-      - add_ssh_keys:
-          fingerprints:
-            - "ce:02:94:61:5a:a4:fc:17:0f:c1:c3:27:54:2f:9f:23"
-      - run:
-          name: Deploy docs to gh-pages branch
-          command: gh-pages --dist www --branch << parameters.target_branch >>
-
+orbs:
+  node: circleci/node@1.1.6
 jobs:
-  release_beta:
-    docker:
-      - image: circleci/node:8.10.0-stretch
+  build-and-test:
+    executor:
+      name: node/default
     steps:
-      - git_checkout_from_cache
-      - npm_install
-      - build
-      - deploy:
-          target_branch: "staging"
-
-  release_production:
-    docker:
-      - image: circleci/node:8.10.0-stretch
-    steps:
-      - git_checkout_from_cache
-      - npm_install
-      - build
-      - deploy:
-          target_branch: "production"
-
+      - checkout
+      - node/with-cache:
+          steps:
+            - run: npm install
+            - run: npm test
 workflows:
-  release:
-    jobs:
-      - release_beta:
-          filters:
-            branches:
-              only: /^master$/
-      - release_production:
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only:/^production.*/
+    build-and-test:
+      jobs:
+        - build-and-test
