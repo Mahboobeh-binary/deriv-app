@@ -64,7 +64,7 @@ commands:
     steps:
       - checkout
       - attach_workspace:
-          at: www
+          at: dist
       - run:
           name: Tag build
           command: echo "<< parameters.target_branch >> $(date)" > www/version
