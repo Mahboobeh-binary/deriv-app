@@ -79,7 +79,7 @@ commands:
             - "ff:22:4d:92:45:c8:c4:b6:4f:9a:7b:5d:44:aa:35:b6"
       - run:
           name: Deploy docs to gh-pages branch
-          command: gh-pages -d dist --branch << parameters.target_branch >>
+          command: gh-pages -d packages/core/dist --branch << parameters.target_branch >>
 
 jobs:
   release_beta:
