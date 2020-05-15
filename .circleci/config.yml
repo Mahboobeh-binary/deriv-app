@@ -76,7 +76,7 @@ commands:
             git config user.name "mahboobeh-binary"
       - add_ssh_keys:
           fingerprints:
-            - "d2:a0:15:89:0e:3f:5e:09:ac:12:ed:f1:4b:96:d8:10"
+            - "ff:22:4d:92:45:c8:c4:b6:4f:9a:7b:5d:44:aa:35:b6"
       - run:
           name: Deploy docs to gh-pages branch
           command: gh-pages --dist www --branch << parameters.target_branch >>
