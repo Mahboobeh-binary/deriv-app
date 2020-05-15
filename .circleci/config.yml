@@ -57,7 +57,7 @@ commands:
           name: "build core"
           command: node_modules/lerna/cli.js exec --scope @deriv/core -- npm run build
   deploy:
-    description: "Deploy to k8s cluster"
+    description: "Deploy to static branches"
     parameters:
       target_branch:
         type: string
@@ -67,7 +67,7 @@ commands:
           at: dist
       - run:
           name: Tag build
-          command: echo "<< parameters.target_branch >> $(date)" > www/version
+          command: echo "<< parameters.target_branch >> $(date)" > dist/version
       - run:
           name: Install and configure dependencies
           command: |
